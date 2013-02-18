@@ -37,3 +37,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# nvm
+[[ -s /Users/yohei/.nvm/nvm.sh ]] && . /Users/yohei/.nvm/nvm.sh 
