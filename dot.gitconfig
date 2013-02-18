@@ -1,0 +1,31 @@
+[user]
+	name = hakobe
+	email = hakobe@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	excludesfile = /Users/yohei/.gitignore
+[push]
+	default = current
+[branch]
+	autosetuprebase = always
+[alias]
+    st = status
+    ci = commit -v 
+    br = branch
+    co = checkout
+    df = diff
+    lg  = log --decorate --abbrev-commit
+    lgg = log --stat --pretty=format:'%Cblue%h %Cgreen%ar %Cred%an %Creset%s %Cred%d'
+    lgr = log --graph --date-order --pretty=format:'%Cblue%h %Cgreen%ci %Cred%an %Cblue%m %Creset%s %Cred%d'
+    lgp = log --decorate --abbrev-commit -p
+    x  = !open -a GitX .
+    a  = add
+    d  = diff
+    dc = diff --cached
+    f  = fetch
+    sup = submodule update --init
+    sa = stash apply
