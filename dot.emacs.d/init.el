@@ -30,11 +30,36 @@
 
 ;; el-get 
 (el-get 'sync
-  '(evil anything auto-complete color-theme-solarized magit))
+  '(anything auto-complete color-theme-solarized magit))
 
 ;; evil
+;; evil settings
+(setq-default evil-auto-indent t
+              evil-shift-with 4
+              evil-cross-lines t
+              evil-echo-state nil
+              evil-want-C-i-jump nil
+              evil-want-fine-undo t
+              evil-search-module 'evil-search
+              evil-ex-search-vim-style-regexp t)
+(el-get `sync `evil)
 (require 'evil)
 (evil-mode 1)
+(defun evil-swap-key (map key1 key2)
+  "Swap KEY1 and KEY2 in MAP."
+  (let ((def1 (lookup-key map key1))
+        (def2 (lookup-key map key2)))
+    (define-key map key1 def2)
+    (define-key map key2 def1)))
+
+;; move cursor visually by default
+(evil-swap-key evil-motion-state-map "j" "gj")
+(evil-swap-key evil-motion-state-map "k" "gk")
+
+;; ファイルやバッファの切り替え
+(define-key evil-normal-state-map (kbd ",f") #'anything-filelist+)
+(define-key evil-normal-state-map (kbd ",b") #'anything-filelist+)
+
 
 ;; color theme solalized
 (load-theme 'solarized-dark t)
@@ -214,28 +239,5 @@
   (setq undo-tree-mode-lighter nil))
 
 
-;; evil settings
-(setq-default evil-auto-indent t
-              evil-shift-with 4
-              evil-cross-lines t
-              evil-echo-state nil
-              evil-want-C-i-jump nil
-              evil-want-fine-undo t
-              evil-search-module 'evil-search
-              evil-ex-search-vim-style-regexp t)
 
-(defun evil-swap-key (map key1 key2)
-  "Swap KEY1 and KEY2 in MAP."
-  (let ((def1 (lookup-key map key1))
-        (def2 (lookup-key map key2)))
-    (define-key map key1 def2)
-    (define-key map key2 def1)))
-
-;; move cursor visually by default
-(evil-swap-key evil-motion-state-map "j" "gj")
-(evil-swap-key evil-motion-state-map "k" "gk")
-
-;; ファイルやバッファの切り替え
-(define-key evil-normal-state-map (kbd ",f") #'anything-filelist+)
-(define-key evil-normal-state-map (kbd ",b") #'anything-filelist+)
 
