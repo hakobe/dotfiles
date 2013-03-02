@@ -1,8 +1,8 @@
 ;; ~/.emacs.d下に入れたファイルをload,require等で読み込めるようにする
 (setq load-path (cons "~/.emacs.d" load-path))
 
-;; ~/.emacs.d/site-lisp下に入れたファイルを(サブディレクトリ内のものも
-;; 含め)load,require等で読み込めるようにする
+;; ~/.emacs.d/site-lisp下に入れたファイルを(サブディレクトリを含む)
+;; oad,require等で読み込めるようにする
 (when (fboundp 'normal-top-level-add-subdirs-to-load-path)
   (let* ((dir "~/.emacs.d/site-lisp")
          (default-directory dir))
@@ -28,45 +28,14 @@
 ;; fix evil.rcp
 (add-to-list 'el-get-sources '(:name evil :build (("make" "all")) :info nil))
 
-;; el-get 
 (el-get 'sync
-  '(anything auto-complete color-theme-solarized magit))
-
-;; evil
-;; evil settings
-(setq-default evil-auto-indent t
-              evil-shift-with 4
-              evil-cross-lines t
-              evil-echo-state nil
-              evil-want-C-i-jump nil
-              evil-want-fine-undo t
-              evil-search-module 'evil-search
-              evil-ex-search-vim-style-regexp t)
-(el-get `sync `evil)
-(require 'evil)
-(evil-mode 1)
-(defun evil-swap-key (map key1 key2)
-  "Swap KEY1 and KEY2 in MAP."
-  (let ((def1 (lookup-key map key1))
-        (def2 (lookup-key map key2)))
-    (define-key map key1 def2)
-    (define-key map key2 def1)))
-
-;; move cursor visually by default
-(evil-swap-key evil-motion-state-map "j" "gj")
-(evil-swap-key evil-motion-state-map "k" "gk")
-
-;; ファイルやバッファの切り替え
-(define-key evil-normal-state-map (kbd ",f") #'anything-filelist+)
-(define-key evil-normal-state-map (kbd ",b") #'anything-filelist+)
-
+  '(helm auto-complete color-theme-solarized magit))
 
 ;; color theme solalized
 (load-theme 'solarized-dark t)
 
 ;; font
 (set-face-attribute 'default nil
-
                     :family "monaco"
                     :height 140)
 (set-fontset-font
@@ -102,8 +71,8 @@
 
 ;;;;;;
 
-;; デフォルトタブ幅4, タブはスペースを挿入
-(setq-default tab-width 4
+;; デフォルトタブ幅2, タブはスペースを挿入
+(setq-default tab-width 2
               indent-tabs-mode nil)
 
 ;; 終了時にオートセーブファイルを消す
@@ -124,9 +93,6 @@
 ;; ツールバーを非表示にする
 (tool-bar-mode 0)
 
-;; メニューバーを非表示にする
-;;(menu-bar-mode 0)
-
 ;; メニューバーにファイルパスを表示
 (setq frame-title-format
       (format "%%f - Emacs@%s" (system-name)))
@@ -141,7 +107,7 @@
 (delete-selection-mode t)
 
 ;; 行番号を(常に)表示する
-;; (global-linum-mode)
+(global-linum-mode)
 
 ;; カーソル位置の行をハイライトする
 (global-hl-line-mode)
@@ -183,61 +149,75 @@
 ;; バッファの範囲を示すマークを表示する
 (setq-default indicate-buffer-boundaries 'left)
 
-;; C-x C-bでバッファ選択画面を開く
-(global-set-key (kbd "C-x C-b") 'bs-show)
 
-;; IntelliSenseのような自動補完
-;; [補完候補のキーバインド]
-;;   M-n  次の候補
-;;   M-p  前の候補
-;;   TAB  候補の確定
-;;   C-m  候補の確定
-(when (require 'auto-complete nil t)
-  (global-auto-complete-mode t)
-  (setq ac-auto-show-menu 0.5))
+;; Mac環境でのバックスラッシュ入力対策
+(define-key global-map [?\¥] [?\\])
+(define-key global-map [?\C-¥] [?\C-\\])
+(define-key global-map [?\M-¥] [?\M-\\])
+(define-key global-map [?\C-\M-¥] [?\C-\M-\\])
 
-;; 様々なものの選択を賢くする
-;; [候補選択のキーバインド]
-;;   C-n    次の候補
-;;   Down   次の候補
-;;   C-p    前の候補
-;;   Up     前の候補
-;;   Left   次の生成元
-;;   Right  前の生成元
-(when (require 'anything-config nil t)
-  (setq dired-bind-jump nil) ; prevent binding to C-x C-j
+;; server起動
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
-  ;; ファイル選択で使うファイルリストの生成元
-  (setq anything-for-files-prefered-list
-      '(anything-c-source-buffers+
-        anything-c-source-ffap-line
-        anything-c-source-ffap-guesser
-        anything-c-source-recentf
-        anything-c-source-bookmarks
-        anything-c-source-files-in-current-dir+
-        anything-c-source-locate))
+;; evil
+;; evil settings
+(setq-default evil-auto-indent t
+              evil-shift-with 4
+              evil-cross-lines nil
+              evil-echo-state nil
+              evil-want-C-i-jump nil
+              evil-want-fine-undo t
+              evil-search-module 'evil-search
+              evil-ex-search-vim-style-regexp t)
+(el-get `sync `(evil evil-leader))
+(require 'evil)
+(evil-mode 1)
 
+;; plugins
+(defun hakobe/open-terminal ()
+  (interactive)
+  (shell-command "open -a Terminal"))
+(defun hakobe/open-chrome ()
+  (interactive)
+  (shell-command "open -a \"Google Chrome\""))
 
-  ;; M-xでanythingを有効にする
-  (when (require 'anything-complete nil t)(setq anything-complete-sort-candidates t)
-    (substitute-key-definition 'execute-extended-command
-                               'anything-execute-extended-command global-map)))
+(evil-leader/set-leader ",")
+(evil-leader/set-key
+  "c" 'hakobe/open-chrome
+  "s" 'hakobe/open-terminal
+  "w" 'save-buffer
+  "f" 'helm-find-files
+  "b" 'helm-mini)
 
+;; keys
+(defun evil-swap-key (map key1 key2)
+  "Swap KEY1 and KEY2 in MAP."
+  (let ((def1 (lookup-key map key1))
+        (def2 (lookup-key map key2)))
+    (define-key map key1 def2)
+    (define-key map key2 def1)))
 
-;; 元に戻す/やり直しをツリー状に管理
-;; [キーバインド]
-;;   C-/    元に戻す
-;;   M-_    やり直し
-;;   C-x u  編集履歴ツリーを表示
-;;     p    ツリーを上る (元に戻す)
-;;     n    ツリーを下る (やり直し)
-;;     f    右の枝を選択
-;;     b    左の枝を選択
-;;     q    ツリーを閉じる
-(when (require 'undo-tree nil t)
-  (global-undo-tree-mode)
-  (setq undo-tree-mode-lighter nil))
-
+;; move cursor visually by default
+(evil-swap-key evil-motion-state-map "j" "gj")
+(evil-swap-key evil-motion-state-map "k" "gk")
 
 
+;; helm
+(require 'helm-config)
 
+;; auto-complete
+(require 'auto-complete nil t)
+(global-auto-complete-mode t)
+(setq ac-auto-show-menu 0.3)
+(setq ac-use-menu-map t)
+
+(define-key ac-menu-map (kbd "\C-n") 'ac-next)
+(define-key ac-menu-map (kbd "\C-p") 'ac-previous)
+
+
+; undo
+(require 'undo-tree nil t)
+(global-undo-tree-mode)
+(setq undo-tree-mode-lighter nil)
