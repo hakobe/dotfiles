@@ -2,7 +2,7 @@
 (setq load-path (cons "~/.emacs.d" load-path))
 
 ;; ~/.emacs.d/site-lisp下に入れたファイルを(サブディレクトリを含む)
-;; oad,require等で読み込めるようにする
+;; load,require等で読み込めるようにする
 (when (fboundp 'normal-top-level-add-subdirs-to-load-path)
   (let* ((dir "~/.emacs.d/site-lisp")
          (default-directory dir))
@@ -205,7 +205,15 @@
 
 
 ;; helm
+;; ESCでminibufferをぬけれるようにしたいけどよくわかない...
 (require 'helm-config)
+(eval-after-load 'helm
+  '(progn
+     (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+
+(eval-after-load 'helm-files
+  '(progn
+     (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)))
 
 ;; auto-complete
 (require 'auto-complete nil t)
