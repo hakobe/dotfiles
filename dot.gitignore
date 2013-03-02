@@ -10,5 +10,5 @@
 .DS_Store
 *.sw[po]
 tags
-hakobe_tmp
+/hakobe_tmp
 *.pyc
