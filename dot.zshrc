@@ -60,7 +60,7 @@ setopt print_eightbit
 setopt print_exit_value
 
 ### エイリアスファイルがあれば読み込む
-if [ -e ~/.alias ]; then
+if [ -e ~/.aliases ]; then
     source ~/.aliases
 fi
 
