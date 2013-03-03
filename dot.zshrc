@@ -10,7 +10,6 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/.aliases
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -38,6 +37,51 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+bindkey '^P' history-beginning-search-backward # 先頭マッチのヒストリサーチ
+bindkey '^N' history-beginning-search-forward  # 先頭マッチのヒストリサーチ
+
+# Ctrl+S/Ctrl+Q によるフロー制御を使わないようにする
+setopt NO_flow_control
+
+# シェルが終了しても裏ジョブに HUP シグナルを送らないようにする
+setopt NO_hup
+
+# コマンドラインでも # 以降をコメントと見なす
+setopt interactive_comments
+
+# ファイル名の展開でディレクトリにマッチした場合末尾に / を付加する
+setopt mark_dirs
+
+# 8 ビット目を通すようになり、日本語のファイル名などを見れるようになる
+setopt print_eightbit
+
+# 戻り値が 0 以外の場合終了コードを表示する
+setopt print_exit_value
+
+### エイリアスファイルがあれば読み込む
+if [ -e ~/.alias ]; then
+    source ~/.aliases
+fi
+
+### 便利な関数
+function w {
+    cd ~/working/$1
+}
+
+function _w {
+    local allfiles
+    local -a _projects
+
+    allfiles=`find ~/working/* -type d -maxdepth 0 -exec basename '{}' ';'`
+
+    _projects=( $(echo $allfiles) )
+    _describe -t projects "Projects" _projects
+
+    return 1;
+}
+
+compdef _w w
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
