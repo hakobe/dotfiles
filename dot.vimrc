@@ -1,3 +1,7 @@
+" vim:set foldmethod=marker:
+
+" Basic Configuration {{{
+
 set nocompatible
 set backspace=indent,eol,start
 
@@ -28,14 +32,14 @@ hi PmenuSbar ctermbg=DarkGray
 
 set number
 
+set modelines=1
+
 " タブ幅の設定
 set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
-
-set modelines=0
 
 "インデントの設定
 set autoindent
@@ -154,3 +158,18 @@ set tags=tags,./tags,./**/tags
 " 辞書ファイルからの単語補間
 set complete+=k
 
+" }}}
+
+" NeoBundle {{{
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle 'kien/ctrlp.vim'
+
+filetype plugin indent on " Required for NeoBundle
+
+" }}}

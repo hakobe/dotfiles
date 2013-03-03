@@ -1,3 +1,5 @@
 /dot.emacs.d/el-get
 /dot.emacs.d/auto-save-list
 /dot.emacs.d/ac-comphist.dat
+/dot.vim/bundle/*
+!/dot.vim/bundle/neobundle.vim
