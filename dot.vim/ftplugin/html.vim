@@ -1,4 +1,4 @@
 setlocal indentexpr=
 setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal softtabstop=4
-setlocal shiftwidth=4
+setlocal softtabstop=2
+setlocal shiftwidth=2
