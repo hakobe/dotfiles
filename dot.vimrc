@@ -1,5 +1,24 @@
 " vim:set foldmethod=marker:
 
+" NeoBundle {{{
+filetype off
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'kien/ctrlp.vim'
+
+filetype plugin indent on " Required for NeoBundle
+
+" }}}
+
 " Basic Configuration {{{
 
 set nocompatible
@@ -20,7 +39,8 @@ set t_Co=256
 set t_Sf=[3%dm
 set t_Sb=[4%dm
 
-colorscheme desert
+colorscheme jellybeans
+set background=dark
 
 " 補完候補の色づけ
 hi Pmenu ctermfg=Black
@@ -158,18 +178,11 @@ set tags=tags,./tags,./**/tags
 " 辞書ファイルからの単語補間
 set complete+=k
 
+let mapleader = ","
+
 " }}}
 
-" NeoBundle {{{
-
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#rc(expand('~/.vim/bundle/'))
-
-NeoBundle 'kien/ctrlp.vim'
-
-filetype plugin indent on " Required for NeoBundle
+" Plugin Setting {{{
+let g:indent_guides_enable_on_vim_startup = 1
 
 " }}}
