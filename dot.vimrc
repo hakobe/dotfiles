@@ -14,6 +14,8 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tyru/eskk.vim'
+NeoBundle 'kana/vim-fakeclip'
 
 filetype plugin indent on " Required for NeoBundle
 
@@ -185,11 +187,19 @@ let mapleader = ","
 
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
-noremap <Leader>w :update<CR>
-noremap <silent> <Leader>n :bn<CR>
-noremap <silent> <Leader>p :bp<CR>
-noremap <silent> <Leader>d :bd<CR>
+noremap <unique> <Leader>w :<C-u>update<CR>
+noremap <unique> <silent> <Leader>n :bn<CR>
+noremap <unique> <silent> <Leader>p :bp<CR>
+noremap <unique> <silent> <Leader>d :bd<CR>
+
+" Macのクリップボードをペースト
+nmap <unique> <silent> <Leader>v <Plug>(fakeclip-p)
+vmap <unique> <silent> <Leader>v <Plug>(fakeclip-p)
+nmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
+vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 
 " }}}
 
@@ -198,5 +208,13 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 "" powerline
 let g:Powerline_symbols = 'compatible'
+
+"" eskk
+
+let g:eskk#large_dictionary = {
+\   'path': "/Users/yohei/Library/Application Support/AquaSKK/SKK-JISYO.L",
+\   'sorted': 0,
+\   'encoding': 'euc-jp',
+\}
 
 " }}}
