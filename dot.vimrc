@@ -177,12 +177,26 @@ set tags=tags,./tags,./**/tags
 
 " 辞書ファイルからの単語補間
 set complete+=k
+" }}}
+
+" Key Binding {{{
 
 let mapleader = ","
+
+nnoremap j gj
+nnoremap k gk
+
+noremap <Leader>w :update<CR>
+noremap <silent> <Leader>n :bn<CR>
+noremap <silent> <Leader>p :bp<CR>
+noremap <silent> <Leader>d :bd<CR>
 
 " }}}
 
 " Plugin Setting {{{
 let g:indent_guides_enable_on_vim_startup = 1
+
+"" powerline
+let g:Powerline_symbols = 'compatible'
 
 " }}}
