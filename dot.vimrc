@@ -207,7 +207,7 @@ vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 let g:indent_guides_enable_on_vim_startup = 1
 
 "" powerline
-let g:Powerline_symbols = 'compatible'
+let g:Powerline_symbols = 'fancy'
 
 "" eskk
 
