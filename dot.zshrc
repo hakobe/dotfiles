@@ -88,3 +88,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # nvm
 [[ -s /Users/yohei/.nvm/nvm.sh ]] && . /Users/yohei/.nvm/nvm.sh 
+
+# perlbrew
+source ~/perl5/perlbrew/etc/bashrc
+
