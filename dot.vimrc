@@ -14,8 +14,8 @@ NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tyru/eskk.vim'
 NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'Align'
 
 filetype plugin indent on " Required for NeoBundle
 
