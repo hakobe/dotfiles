@@ -1,0 +1,13 @@
+# vim:set ft=snippet noet:
+snippet dump
+	use Data::Dumper; warn Dumper(${1});
+
+snippet subtest
+	subtest ${1:test_name} => sub {
+		${2:#:body}
+	};
+
+snippet tests
+	sub ${1:test_name} : Tests {
+		${2:#:body}
+	}

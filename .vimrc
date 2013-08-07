@@ -16,6 +16,10 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'Align'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'thinca/vim-quickrun'
 
 filetype plugin indent on " Required for NeoBundle
 
@@ -175,7 +179,7 @@ set fileformats=unix,dos,mac
 set ambiwidth=double
 
 " set tags
-set tags=tags,./tags,./**/tags
+set tags=tags,./tags
 
 " 辞書ファイルからの単語補間
 set complete+=k
@@ -206,7 +210,88 @@ vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 " Plugin Setting {{{
 let g:indent_guides_enable_on_vim_startup = 1
 
-"" powerline
+"" powerline {{{
 let g:Powerline_symbols = 'fancy'
+"" }}}
+
+"" neocomplepop {{{
+
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+"" }}}
+
+"" neosnippet {{{
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+let g:neosnippet#snippets_directory = "~/.vim/snippets"
+
+"" }}}
+
+"" quickrun {{{
+let g:quickrun_config = {}
+
+let g:quickrun_config['perl.test'] = {
+    \ 'command': 'prove',
+    \ 'exec': '%c -v %s'
+    \ }
+
+augroup QuickRunPerlTest
+  autocmd!
+  autocmd BufWinEnter,BufNewFile *.t set filetype=perl.test
+augroup END
+
+"" }}}
+
+"" fugitive {{{
+
+noremap <unique> <Leader>gs :<C-u>Gstatus<CR>
+noremap <unique> <Leader>gd :<C-u>Gdiff<CR>
+noremap <unique> <Leader>gb :<C-u>Gblame<CR>
+noremap <unique> <Leader>ga :<C-u>Gwrite<CR>
+noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
+
+"" }}}
+
 
 " }}}
