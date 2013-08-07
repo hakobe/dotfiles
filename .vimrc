@@ -209,12 +209,4 @@ let g:indent_guides_enable_on_vim_startup = 1
 "" powerline
 let g:Powerline_symbols = 'fancy'
 
-"" eskk
-
-let g:eskk#large_dictionary = {
-\   'path': "/Users/yohei/Library/Application Support/AquaSKK/SKK-JISYO.L",
-\   'sorted': 0,
-\   'encoding': 'euc-jp',
-\}
-
 " }}}
