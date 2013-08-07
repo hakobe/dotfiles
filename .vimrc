@@ -185,7 +185,7 @@ set tags=tags,./tags
 set complete+=k
 " }}}
 
-" Key Binding {{{
+" Commands {{{
 
 let mapleader = ","
 
@@ -199,16 +199,23 @@ noremap <unique> <silent> <Leader>n :bn<CR>
 noremap <unique> <silent> <Leader>p :bp<CR>
 noremap <unique> <silent> <Leader>d :bd<CR>
 
+" }}}
+
+" Plugin Setting {{{
+
+"" vim-indent-guides {{{
+let g:indent_guides_enable_on_vim_startup = 1
+"}}}
+
+"" fakeclip {{{
+
 " Macのクリップボードをペースト
 nmap <unique> <silent> <Leader>v <Plug>(fakeclip-p)
 vmap <unique> <silent> <Leader>v <Plug>(fakeclip-p)
 nmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 
-" }}}
-
-" Plugin Setting {{{
-let g:indent_guides_enable_on_vim_startup = 1
+"" }}}
 
 "" powerline {{{
 let g:Powerline_symbols = 'fancy'
@@ -271,16 +278,6 @@ let g:neosnippet#snippets_directory = "~/.vim/snippets"
 "" quickrun {{{
 let g:quickrun_config = {}
 
-let g:quickrun_config['perl.test'] = {
-    \ 'command': 'prove',
-    \ 'exec': '%c -v %s'
-    \ }
-
-augroup QuickRunPerlTest
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *.t set filetype=perl.test
-augroup END
-
 "" }}}
 
 "" fugitive {{{
@@ -295,3 +292,4 @@ noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 
 
 " }}}
+

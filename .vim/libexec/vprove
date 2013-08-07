@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export TEST_METHOD="$1"
+shift;
+
+prove -v $@
