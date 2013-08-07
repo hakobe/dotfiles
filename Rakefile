@@ -7,6 +7,7 @@ DST_DOT_FILES = %w(
   .zshrc
   .aliases
   .tmux.conf
+  .proverc
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
 rule /^#{ENV['HOME']}\/\..*$/ => 
