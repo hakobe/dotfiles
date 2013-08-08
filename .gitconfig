@@ -7,7 +7,7 @@
   branch = auto
   interactive = auto
 [core]
-  excludesfile = /Users/yohei/.gitignore
+  excludesfile = /Users/yohei/.global_gitignore
 [push]
   default = current
 [branch]

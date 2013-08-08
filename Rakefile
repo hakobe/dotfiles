@@ -8,6 +8,7 @@ DST_DOT_FILES = %w(
   .aliases
   .tmux.conf
   .proverc
+  .global_gitignore
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
 rule /^#{ENV['HOME']}\/\..*$/ => 
@@ -15,8 +16,4 @@ rule /^#{ENV['HOME']}\/\..*$/ =>
   sh %(ln -sF "#{Rake.original_dir}/#{task.source}" "#{task.name}")
 end
 
-file "#{ENV['HOME']}/.gitignore" => "dot.gitignore" do |task|
-  sh %(ln -sF "#{Rake.original_dir}/dot.gitignore" "#{task.name}")
-end
-
-task :default => DST_DOT_FILES + [ "#{ENV['HOME']}/.gitignore" ]
+task :default => DST_DOT_FILES
