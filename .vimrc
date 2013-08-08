@@ -45,8 +45,8 @@ set t_Co=256
 set t_Sf=[3%dm
 set t_Sb=[4%dm
 
-colorscheme jellybeans
 set background=dark
+colorscheme jellybeans
 
 " 補完候補の色づけ
 hi Pmenu ctermfg=Black
