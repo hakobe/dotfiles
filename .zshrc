@@ -92,3 +92,7 @@ if which rbenv > /dev/null; then eval "$(plenv init -)"; fi
 # nvm
 [[ -s /Users/yohei/.nvm/nvm.sh ]] && . /Users/yohei/.nvm/nvm.sh 
 
+if [ -e ~/.zshrc.local ]; then
+    source ~/.zshrc.local
+fi
+
