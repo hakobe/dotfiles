@@ -29,6 +29,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "osyo-manga/vim-watchdogs"
+NeoBundle "motemen/vim-guess-abbrev"
 
 filetype plugin indent on " Required for NeoBundle
 
@@ -237,7 +238,10 @@ vmap ,h v`<I<CR><esc>k0i<!--<ESC>`>j0i--><CR><esc><ESC>
 " Plugin Setting {{{
 
 "" ctrlp {{{
-  let g:ctrlp_switch_buffer = '0'
+let g:ctrlp_extensions = ['mixed', 'quickfix']
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
+let g:ctrlp_switch_buffer = '0'
 "" }}}
 
 "" vim-indent-guides {{{
@@ -260,15 +264,12 @@ let g:Powerline_symbols = 'fancy'
 
 "" neocomplepop {{{
 
-" Use neocomplcache.
+
 let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
 let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-" Use camel case completion.
+let g:neocomplcache_min_syntax_length = 5
+let g:neocomplcache_min_keyword_length = 5
 let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
 let g:neocomplcache_enable_underbar_completion = 1
 
 " Plugin key-mappings.
