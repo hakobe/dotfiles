@@ -9,7 +9,7 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'tpope/vim-surround'
+"NeoBundle 'tpope/vim-surround'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'Lokaltog/vim-powerline'
@@ -19,7 +19,16 @@ NeoBundle 'Align'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'jceb/vim-hier'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle "osyo-manga/shabadou.vim"
+NeoBundle "osyo-manga/vim-watchdogs"
 
 filetype plugin indent on " Required for NeoBundle
 
@@ -303,9 +312,23 @@ let g:neosnippet#snippets_directory = "~/.vim/snippets"
 
 "" }}}
 
+"" vim-hier {{{
+let g:hier_enabled = 1
+"" }}}
+
 "" quickrun {{{
 let g:quickrun_config = {}
+let g:quickrun_config['watchdogs_checker/_'] = {
+      \   'outputter/quickfix/open_cmd' : '',
+      \   'hook/hier_update/enable_exit' : 1,
+      \   'runner/vimproc/updatetime' : 40,
+      \ }
 
+
+"" }}}
+
+"" watchdog {{{
+let g:watchdogs_check_BufWritePost_enable = 1
 "" }}}
 
 "" fugitive {{{
@@ -317,6 +340,7 @@ noremap <unique> <Leader>ga :<C-u>Gwrite<CR>
 noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 
 "" }}}
+
 
 
 " }}}
