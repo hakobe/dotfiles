@@ -227,6 +227,10 @@ vmap ,h v`<I<CR><esc>k0i<!--<ESC>`>j0i--><CR><esc><ESC>
 
 " Plugin Setting {{{
 
+"" ctrlp {{{
+  let g:ctrlp_switch_buffer = '0'
+"" }}}
+
 "" vim-indent-guides {{{
 let g:indent_guides_enable_on_vim_startup = 1
 "}}}
