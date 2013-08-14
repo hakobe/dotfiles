@@ -8,3 +8,4 @@
 /.emacs.d/ac-comphist.dat
 /.vim/bundle/*
 !/.vim/bundle/neobundle.vim
+/.vim/.netrwhist
