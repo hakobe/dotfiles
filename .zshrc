@@ -86,15 +86,6 @@ function _w {
 
 compdef _w w
 
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# plenv
-if which rbenv > /dev/null; then eval "$(plenv init -)"; fi
-
-# nvm
-[[ -s /Users/yohei/.nvm/nvm.sh ]] && . /Users/yohei/.nvm/nvm.sh 
-
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
