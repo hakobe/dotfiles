@@ -30,6 +30,7 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "osyo-manga/vim-watchdogs"
 NeoBundle "motemen/vim-guess-abbrev"
+NeoBundle 'majutsushi/tagbar'
 
 filetype plugin indent on " Required for NeoBundle
 
