@@ -12,7 +12,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 "NeoBundle 'tpope/vim-surround'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'Align'
@@ -258,8 +258,8 @@ vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 
 "" }}}
 
-"" powerline {{{
-let g:Powerline_symbols = 'fancy'
+"" airline {{{
+"let g:airline_powerline_fonts = 1
 "" }}}
 
 "" neocomplepop {{{
