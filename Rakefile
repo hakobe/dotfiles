@@ -4,7 +4,9 @@ DST_DOT_FILES = %w(
   .gitconfig
   .vim
   .vimrc
+  .gvimrc
   .zshrc
+  .zshenv
   .aliases
   .tmux.conf
   .proverc
