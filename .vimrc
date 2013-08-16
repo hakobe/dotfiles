@@ -261,6 +261,7 @@ vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 
 "" airline {{{
 let g:airline_powerline_fonts = 1
+let g:airline_theme='jellybeans'
 "" }}}
 
 "" neocomplepop {{{
