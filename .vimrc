@@ -238,6 +238,10 @@ vmap ,h v`<I<CR><esc>k0i<!--<ESC>`>j0i--><CR><esc><ESC>
 
 " Plugin Setting {{{
 
+"" Align {{{
+let g:DrChipTopLvlMenu = ""
+"" }}}
+
 "" ctrlp {{{
 let g:ctrlp_extensions = ['mixed', 'quickfix']
 let g:ctrlp_cmd = 'CtrlPMixed'
