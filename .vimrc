@@ -9,8 +9,7 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-"NeoBundle 'tpope/vim-surround'
-NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
@@ -57,7 +56,7 @@ set t_Sf=[3%dm
 set t_Sb=[4%dm
 
 set background=dark
-colorscheme jellybeans
+colorscheme hybrid
 
 " 補完候補の色づけ
 hi Pmenu ctermfg=Black
@@ -254,7 +253,7 @@ vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
 
 "" airline {{{
 let g:airline_powerline_fonts = 1
-let g:airline_theme='jellybeans'
+let g:airline_theme='tomorrow'
 "" }}}
 
 "" neocomplepop {{{

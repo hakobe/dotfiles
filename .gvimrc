@@ -1,4 +1,4 @@
-colorscheme jellybeans
+colorscheme hybrid
 
 set transparency=10
 set columns=280
