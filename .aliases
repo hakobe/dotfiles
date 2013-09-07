@@ -1,2 +1,2 @@
 alias "e=emacs"
-alias "mvim=/Applications/MacVim.app/Contents/MacOS/mvim"
+alias "mvim=/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent"
