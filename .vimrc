@@ -337,6 +337,9 @@ noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 
 "" }}}
 
+"" tagbar {{{
+noremap <unique> <Leader>] :<C-u>TagbarToggle<CR>
+"" }}}
 
 
 " }}}
