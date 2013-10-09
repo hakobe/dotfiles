@@ -30,6 +30,7 @@ NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "osyo-manga/vim-watchdogs"
 NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on " Required for NeoBundle
@@ -320,11 +321,19 @@ let g:quickrun_config['watchdogs_checker/_'] = {
       \   'runner/vimproc/updatetime' : 40,
       \ }
 
-
 "" }}}
 
 "" watchdog {{{
 let g:watchdogs_check_BufWritePost_enable = 1
+let g:quickrun_config['watchdogs_checker/perl-projectlibs'] = {
+      \   'command' : '~/.vim/tools/efm_perl.pl',
+      \   'exec' : '%c %o %s:p',
+      \   'quickfix/errorformat' : '%f:%l:%m',
+      \ }
+let g:quickrun_config['perl/watchdogs_checker'] = {
+      \   'type' : 'watchdogs_checker/perl-projectlibs',
+      \ }
+
 "" }}}
 
 "" fugitive {{{
