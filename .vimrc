@@ -333,6 +333,9 @@ let g:quickrun_config['watchdogs_checker/perl-projectlibs'] = {
 let g:quickrun_config['perl/watchdogs_checker'] = {
       \   'type' : 'watchdogs_checker/perl-projectlibs',
       \ }
+let g:quickrun_config['scala/watchdogs_checker'] = {
+      \   'type' : '',
+      \ }
 
 "" }}}
 
