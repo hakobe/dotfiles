@@ -173,6 +173,7 @@
               evil-ex-search-vim-style-regexp t)
 (el-get `sync `(evil evil-leader))
 (require 'evil)
+(global-evil-leader-mode)
 (evil-mode 1)
 
 ;; plugins
