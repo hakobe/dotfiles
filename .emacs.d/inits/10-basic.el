@@ -1,6 +1,7 @@
 ;; color theme solalized
-;; (load-theme 'solarized-dark t)
-(load-theme 'wombat t)
+(el-get 'sync 'color-theme-solarized)
+(load-theme 'solarized-light t)
+;;(load-theme 'wombat t)
 
 ;; font
 (set-face-attribute 'default nil
@@ -58,6 +59,12 @@
 ;; カーソル位置の行番号と桁数を表示する
 (setq column-number-mode t)
 
+;; 1行ずつスクロール
+(setq scroll-conservatively 35
+      scroll-margin 0
+      scroll-step 1)
+(setq comint-scroll-show-maximum-output t) ;; for shell-mode
+
 ;; ツールバーを非表示にする
 (tool-bar-mode 0)
 
@@ -65,8 +72,14 @@
 (setq frame-title-format
       (format "%%f - Emacs@%s" (system-name)))
 
-;; 対応する括弧をハイライトする
-(show-paren-mode t)
+;; 対応する括弧を光らせる
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+(setq show-paren-style 'expression)
+(set-face-attribute 'show-paren-match-face nil
+                    :background "#eee8d5" :foreground nil
+                    :underline nil :weight 'normal)
+
 
 ;; 選択範囲を表示する
 (setq transient-mark-mode t)
@@ -82,6 +95,22 @@
 
 ;; カーソルを点滅しない
 (blink-cursor-mode nil)
+
+;; 最後のカーソル位置を記録
+(load "saveplace")
+(setq-default save-place t)
+
+;; status-barに時間表示
+(setq display-time-24hr-format t)
+(setq display-time-day-and-date t)
+(setq display-time-string-forms
+      '(month "/" day " " 24-hours ":" minutes " "))
+(display-time-mode 1)
+
+;; which-func
+(require 'which-func)
+(which-func-mode t)
+(setq which-func-modes t)
 
 ;;windowの設定
 (setq default-frame-alist
@@ -116,7 +145,6 @@
 
 ;; バッファの範囲を示すマークを表示する
 (setq-default indicate-buffer-boundaries 'left)
-
 
 ;; Mac環境でのバックスラッシュ入力対策
 (define-key global-map [?\¥] [?\\])
