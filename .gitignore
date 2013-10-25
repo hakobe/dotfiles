@@ -1,11 +1,7 @@
-/dot.emacs.d/el-get
-/dot.emacs.d/auto-save-list
-/dot.emacs.d/ac-comphist.dat
-/dot.vim/bundle/*
-!/dot.vim/bundle/neobundle.vim
 /.emacs.d/el-get
 /.emacs.d/auto-save-list
 /.emacs.d/ac-comphist.dat
+/.emacs.d/places
 /.vim/bundle/*
 !/.vim/bundle/neobundle.vim
 /.vim/.netrwhist
