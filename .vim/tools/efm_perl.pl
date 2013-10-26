@@ -1,21 +1,17 @@
 #!/usr/bin/env perl
 
-# This is shamelessly ripped from $VIMRUNTIME/tools/efm_perl.pl (which was last
-# updated in 2001 according to the version history--but I'm willing to accept
-# that someone has probably made changes to it since then.) Check that file for
-# details and historical information.
-
 use strict;
 use warnings;
 
 use Cwd;
 use File::Basename;
+use File::Spec;
 
 die "Too many arguments!\n" if @ARGV > 1;
 
 my $file = shift or die "No filename to check!\n";
 my $dir  = dirname( $file ) . '/lib';
-my $cwd  = cwd() . '/lib';
+my $cwd  = cwd();
 
 my $error = qr{(.*)\sat\s(.*)\sline\s(\d+)(\.|,\snear\s\".*\"?)};
 
@@ -28,17 +24,6 @@ my @skip = (
 );
 
 my $skip = join '|', @skip;
-
-# Thanks to
-#
-# http://blogs.perl.org/users/ovid/2011/01/warningsunused-versus-ppi.html for
-# the 'warnings::unused' trick.
-#
-# https://github.com/Ovid/DB--Color.git for the 'circular::require' trick
-
-# Note: Most of the following modules need to be installed, most are not
-# included in core.
-
 my @checks;
 
 push @checks, '-M-circular::require' if `perldoc -l circular::require 2> /dev/null`;
@@ -49,16 +34,25 @@ push @checks, '-Mwarnings::unused'   if `perldoc -l warnings::unused 2> /dev/nul
 # uninit is not included in 5.10 and later
 push @checks, '-Muninit'             if ( $] < 5.010 ) && `perldoc -l uninit 2> /dev/null`;
 
-push @checks, '-MProject::Libs';
+my @incs; 
+push @incs, "-I $cwd/lib";
+push @incs, "-I $cwd/t/lib";
+push @incs, map { "-I $_" }  glob("$cwd/modules/*/lib");
 
 # need to turn on taint if it's on the shebang line.
 # naive check for [tT] switch ... will both t and T ever be used at the same time?
 my ( $taint ) = `head -n 1 $file` =~ /\s.*-.*?(t)/i;
 push @checks, "-$taint" if defined $taint;
 
+my $checks = join(' ', @checks);
+my $incs = join(' ', @incs);
+my $command = (-f "$cwd/cpanfile") ?
+    "carton exec @incs -- perl @checks -c $file 2>&1" : 
+    "perl @incs @checks -c $file 2>&1";
+
 my ( $message, $extracted_file, $lineno, $rest );
 
-for my $line ( `perl -I $dir -I $cwd @checks -c $file 2>&1` ) {
+for my $line ( `$command` ) {
 
   chomp $line;
   next if $line =~ /$skip/;
