@@ -1,2 +1,2 @@
-alias "v=/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent"
+alias "v=/Applications/MacVim.app/Contents/MacOS/mvim --remote-silent"
 alias "vn=/Applications/MacVim.app/Contents/MacOS/mvim"
