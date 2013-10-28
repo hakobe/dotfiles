@@ -16,6 +16,7 @@
                      "*helm mini*"))
 
 (global-set-key (kbd "C-;") 'my-helm-mini)
+(global-set-key (kbd "C-:") 'helm-M-x)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
