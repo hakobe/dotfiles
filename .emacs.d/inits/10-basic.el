@@ -89,6 +89,7 @@
 
 ;; 行番号を(常に)表示する
 (global-linum-mode)
+(setq linum-format "%4d ")
 
 ;; カーソル位置の行をハイライトする
 (global-hl-line-mode)
