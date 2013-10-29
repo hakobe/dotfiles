@@ -2,6 +2,7 @@
 /.emacs.d/auto-save-list
 /.emacs.d/ac-comphist.dat
 /.emacs.d/places
+/.emacs.d/eshell
 /.vim/bundle/*
 !/.vim/bundle/neobundle.vim
 /.vim/.netrwhist
