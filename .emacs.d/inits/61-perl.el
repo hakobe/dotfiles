@@ -1,0 +1,16 @@
+(defalias 'perl-mode 'cperl-mode)
+(setq auto-mode-alist (cons '("\\.t$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.cgi$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.psgi$" . cperl-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("cpanfile$" . cperl-mode) auto-mode-alist))
+
+(add-hook 'cperl-mode-hook
+          '(lambda ()
+             (setq indent-tabs-mode nil)
+             (setq cperl-close-paren-offset -4)
+             (setq cperl-continued-statement-offset 4)
+             (setq cperl-indent-level 4)
+             (setq cperl-indent-parens-as-block t)
+             (setq cperl-tab-always-indent t)
+             (setq cperl-indent-parens-as-block t)
+             (flymake-mode t)))
