@@ -13,4 +13,5 @@
              (setq cperl-indent-parens-as-block t)
              (setq cperl-tab-always-indent t)
              (setq cperl-indent-parens-as-block t)
-             (flymake-mode t)))
+             (flycheck-mode 1)
+             (setq flycheck-checker 'perl-my-checker)))
