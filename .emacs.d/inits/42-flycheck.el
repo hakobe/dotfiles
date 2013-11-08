@@ -13,7 +13,7 @@
 (flycheck-define-checker perl-my-checker
   "A Perl syntax checker using customized checker at ~/.emacs.d/bim/perl_checker.pl"
   :command (
-    (eval (expand-file-name "~/.emacs.d/bin/perl_checker.pl"))
+    (eval (expand-file-name "~/.emacs.d/libexec/perl_checker.pl"))
     (eval (expand-file-name (or (vc-git-root default-directory) ".")))
     source)
   :error-patterns

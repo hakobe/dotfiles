@@ -1,0 +1,6 @@
+#!/usr/local/bin/zsh
+if [ -n "$*" ]; then
+  emacsclient -n --alternate-editor="open_emacs" $*
+else
+  open_emacs
+fi
