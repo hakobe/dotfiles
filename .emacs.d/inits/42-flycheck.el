@@ -9,6 +9,7 @@
 
 ;; XXX flycheck-define-checker を呼べるようにするため
 (require 'flycheck)
+(require 'vc-git)
 
 (flycheck-define-checker perl-my-checker
   "A Perl syntax checker using customized checker at ~/.emacs.d/bim/perl_checker.pl"
