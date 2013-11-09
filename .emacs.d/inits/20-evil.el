@@ -32,9 +32,7 @@
 (evil-leader/set-leader ",")
 (evil-leader/set-key
   "w" 'save-buffer
-  "f" 'helm-find-files
-  "x" 'helm-M-x
-  "b" 'helm-mini)
+)
 
 ;; keys
 (defun evil-swap-key (map key1 key2)
