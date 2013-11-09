@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: test-class-method
+# name: test_class_method
+# --
+sub ${1:method_name} : ${2:Tests} {
+    $0
+}

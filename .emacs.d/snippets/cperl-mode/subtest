@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# key: subtest
+# name: subtest
+# --
+subtest '$1' => sub {
+    `yas/selected-text`$0
+};

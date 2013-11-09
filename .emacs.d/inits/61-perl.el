@@ -29,6 +29,7 @@
              (setq cperl-indent-parens-as-block t)
              (setq cperl-tab-always-indent t)
              (setq cperl-indent-parens-as-block t)
+             (yas-minor-mode 1)
              (flycheck-perl-init)
              (flycheck-mode 1)
              (setq flycheck-checker 'perl-my-checker)))
