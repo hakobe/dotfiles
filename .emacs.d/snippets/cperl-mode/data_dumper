@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# key: data-dumper
+# key: dump
 # name: Data::Dumper
 # --
 use Data::Dumper;
