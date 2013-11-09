@@ -10,7 +10,20 @@
 ;; fix evil.rcp
 (add-to-list 'el-get-sources '(:name evil :build (("make" "all")) :info nil))
 
-(el-get 'sync '(evil evil-leader))
+(add-to-list 'el-get-sources
+    '(:name tarao-elisp
+           :type github
+           :pkgname "tarao/elisp"
+           :description "tarao's great elisps" ))
+
+(add-to-list 'el-get-sources
+    '(:name tarao-evil-plugins
+           :type github
+           :pkgname "tarao/evil-plugins"
+           :description "tarao's great evil plugins"
+           :depends (tarao-elisp evil) ))
+
+(el-get 'sync '(evil evil-leader tarao-elisp tarao-evil-plugins))
 
 (global-evil-leader-mode)
 (require 'evil)
@@ -34,3 +47,7 @@
 ;; move cursor visually by default
 (evil-swap-key evil-motion-state-map "j" "gj")
 (evil-swap-key evil-motion-state-map "k" "gk")
+
+;; plugins
+
+(require 'evil-mode-line)
