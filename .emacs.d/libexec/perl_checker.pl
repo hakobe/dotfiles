@@ -50,5 +50,5 @@ my $command = (-f "cpanfile") ?
 for my $line ( `$command` ) {
   chomp $line;
   next if $line =~ /$skip/;
-  print $line;
+  print "$line\n";
 }
