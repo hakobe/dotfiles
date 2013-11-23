@@ -16,6 +16,6 @@
           '(lambda ()
             (require 'go-autocomplete)
             (require 'auto-complete-config)
-            (setq c-basic-offset 4)
-            (setq indent-tabs-mode t)))
+            (set (make-local-variable 'c-basic-offset) 4)
+            (set (make-local-variable 'indent-tabs-mode) t)))
 
