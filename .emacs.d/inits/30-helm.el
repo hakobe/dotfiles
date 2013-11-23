@@ -1,15 +1,11 @@
-(el-get 'sync '(helm helm-c-yasnippet))
-
-(require 'helm)
-(require 'helm-config)
-
-(global-set-key (kbd "C-;") 'helm-mini)
-(global-set-key (kbd "C-:") 'helm-M-x)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(el-get 'sync '(helm helm-c-yasnippet helm-ls-git))
 
 (eval-after-load 'helm
   '(progn
+     (global-set-key (kbd "C-;") 'helm-mini)
+     (global-set-key (kbd "C-:") 'helm-M-x)
+     (global-set-key (kbd "M-x") 'helm-M-x)
+     (global-set-key (kbd "M-y") 'helm-show-kill-ring)
      (define-key helm-map (kbd "C-h") 'delete-backward-char)))
 
 (eval-after-load 'helm-files
