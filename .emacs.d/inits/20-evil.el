@@ -48,4 +48,4 @@
 
 ;; plugins
 
-;(require 'evil-mode-line)
+(require 'evil-mode-line)
