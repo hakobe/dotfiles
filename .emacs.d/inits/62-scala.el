@@ -1,4 +1,4 @@
-(el-get 'sync '(scala-mode2 ensime))
+(el-get 'sync '(scala-mode2))
 
 (add-hook 'scala-mode-hook
           '(lambda ()
