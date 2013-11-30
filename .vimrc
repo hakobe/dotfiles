@@ -318,6 +318,9 @@ noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 noremap <unique> <Leader>] :<C-u>TagbarToggle<CR>
 "" }}}
 
+"" syntastic {{{
+let g:syntastic_perl_checkers = [ 'efmperl' ] " at .vim/syntax_checkers/perl/efmperl.vim
+"" }}}
 
 " }}}
 
