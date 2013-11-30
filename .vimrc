@@ -23,7 +23,6 @@ NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
-NeoBundle 'mhinz/vim-signify'
 
 NeoBundle 'scrooloose/syntastic'
 
