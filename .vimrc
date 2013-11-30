@@ -15,18 +15,22 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kana/vim-fakeclip'
-NeoBundle 'Align'
+NeoBundle 'godlygeek/tabular'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'mileszs/ack.vim'
+NeoBundle 'mbbill/undotree'
+NeoBundle 'mhinz/vim-signify'
 
 NeoBundle 'scrooloose/syntastic'
 
 NeoBundle 'vim-perl/vim-perl'
 
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'derekwyatt/vim-sbt'
 
 filetype plugin indent on " Required for NeoBundle
 
