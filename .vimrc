@@ -9,6 +9,13 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 
@@ -23,6 +30,7 @@ NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
+NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'scrooloose/syntastic'
 
@@ -222,34 +230,35 @@ vnoremap <unique> <silent> ,c :s/^\/\/\\|^--\\|^> \\|^[#"%!;]//<CR>:nohlsearch<C
 
 "" }}}
 
+"" Macのクリップボードをペースト {{{
+nnoremap <unique> <silent> <Leader>v "*p
+vnoremap <unique> <silent> <Leader>v "*p
+nnoremap <unique> <silent> <Leader>y "*y
+vnoremap <unique> <silent> <Leader>y "*y
+" }}}
+
 " }}}
 
 " Plugin Setting {{{
 
-"" Align {{{
-let g:DrChipTopLvlMenu = ""
-"" }}}
-
 "" ctrlp {{{
 let g:ctrlp_extensions = ['mixed', 'quickfix']
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_switch_buffer = '0'
+let g:ctrlp_open_new_file = 'r'
+
+nnoremap <unique> <silent> <C-@> :<C-u>CtrlPMixed<CR>
+nnoremap <unique> <silent> <Leader>cc :<C-u>CtrlP<CR>
+nnoremap <unique> <silent> <Leader>cm :<C-u>CtrlPMixed<CR>
+nnoremap <unique> <silent> <Leader>cr :<C-u>CtrlPMRU<CR>
+nnoremap <unique> <silent> <Leader>ct :<C-u>CtrlPTag<CR>
+
 "" }}}
 
 "" vim-indent-guides {{{
 let g:indent_guides_enable_on_vim_startup = 1
 "}}}
-
-"" fakeclip {{{
-
-" Macのクリップボードをペースト
-nmap <unique> <silent> <Leader>v <Plug>(fakeclip-p)
-vmap <unique> <silent> <Leader>v <Plug>(fakeclip-p)
-nmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
-vmap <unique> <silent> <Leader>y <Plug>(fakeclip-y)
-
-"" }}}
 
 "" airline {{{
 let g:airline_powerline_fonts = 1
@@ -324,6 +333,10 @@ noremap <unique> <Leader>] :<C-u>TagbarToggle<CR>
 "" syntastic {{{
 let g:syntastic_perl_checkers = [ 'efmperl' ] " at .vim/syntax_checkers/perl/efmperl.vim
 "" }}}
+
+"" undotree {{{
+
+nnoremap <unique> <silent> <Leader>u :<C-u>UndotreeToggle<CR>
 
 " }}}
 
