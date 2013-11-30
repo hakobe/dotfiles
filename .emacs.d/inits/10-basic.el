@@ -72,15 +72,6 @@
 (setq frame-title-format
       (format "%%f - Emacs@%s" (system-name)))
 
-;; 対応する括弧を光らせる
-(show-paren-mode 1)
-(setq show-paren-delay 0)
-(setq show-paren-style 'expression)
-(set-face-attribute 'show-paren-match-face nil
-                    :background "#eee8d5" :foreground nil
-                    :underline nil :weight 'normal)
-
-
 ;; 選択範囲を表示する
 (setq transient-mark-mode t)
 
