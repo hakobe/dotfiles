@@ -18,24 +18,31 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
-
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle "osyo-manga/shabadou.vim"
+NeoBundle "osyo-manga/vim-watchdogs"
 NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
+
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
 NeoBundle 'thinca/vim-quickrun'
 
-NeoBundle 'scrooloose/syntastic'
-
 NeoBundle 'vim-perl/vim-perl'
-
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
 
@@ -315,6 +322,36 @@ let g:neosnippet#snippets_directory = "~/.vim/snippets"
 
 "" }}}
 
+"" vim-hier {{{
+let g:hier_enabled = 1
+"" }}}
+
+"" quickrun {{{
+let g:quickrun_config = {}
+let g:quickrun_config['watchdogs_checker/_'] = {
+      \   'outputter/quickfix/open_cmd' : '',
+      \   'hook/hier_update/enable_exit' : 1,
+      \   'runner/vimproc/updatetime' : 40,
+      \ }
+
+"" }}}
+
+"" watchdog {{{
+let g:watchdogs_check_BufWritePost_enable = 1
+let g:quickrun_config['watchdogs_checker/perl-projectlibs'] = {
+      \   'command' : '~/.vim/tools/efm_perl.pl',
+      \   'exec' : '%c %o %s:p',
+      \   'quickfix/errorformat' : '%f:%l:%m',
+      \ }
+let g:quickrun_config['perl/watchdogs_checker'] = {
+      \   'type' : 'watchdogs_checker/perl-projectlibs',
+      \ }
+let g:quickrun_config['scala/watchdogs_checker'] = {
+      \   'type' : '',
+      \ }
+
+"" }}}
+
 "" fugitive {{{
 
 noremap <unique> <Leader>gs :<C-u>Gstatus<CR>
@@ -329,9 +366,6 @@ noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 noremap <unique> <Leader>] :<C-u>TagbarToggle<CR>
 "" }}}
 
-"" syntastic {{{
-let g:syntastic_perl_checkers = [ 'efmperl' ] " at .vim/syntax_checkers/perl/efmperl.vim
-"" }}}
 
 "" undotree {{{
 
