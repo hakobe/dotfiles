@@ -50,6 +50,13 @@ filetype plugin indent on " Required for NeoBundle
 
 " }}}
 
+" Other Plugin Loading {{{
+if $GOROOT != ''
+    set rtp+=$GOROOT/misc/vim
+endif
+
+" }}}
+
 " Basic Configuration {{{
 
 set nocompatible
