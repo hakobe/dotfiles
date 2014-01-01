@@ -25,7 +25,6 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'jceb/vim-hier'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -35,6 +34,8 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "osyo-manga/vim-watchdogs"
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'dannyob/quickfixstatus'
 NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
 
