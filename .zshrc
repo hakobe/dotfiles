@@ -89,4 +89,3 @@ compdef _w w
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
-
