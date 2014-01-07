@@ -11,6 +11,7 @@ DST_DOT_FILES = %w(
   .tmux.conf
   .proverc
   .global_gitignore
+  .gemrc
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
 rule /^#{ENV['HOME']}\/\..*$/ => 
