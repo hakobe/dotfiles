@@ -374,10 +374,15 @@ noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 noremap <unique> <Leader>] :<C-u>TagbarToggle<CR>
 "" }}}
 
-
 "" undotree {{{
 
 nnoremap <unique> <silent> <Leader>u :<C-u>UndotreeToggle<CR>
+
+" }}}
+
+"" tabular {{{
+
+vnoremap <unique> <Leader>t :Tabularize /
 
 " }}}
 
