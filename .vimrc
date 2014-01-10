@@ -265,7 +265,6 @@ let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_open_new_file = 'r'
 
 nnoremap <unique> <silent> <Leader>cp :<C-u>CtrlP<CR>
-nnoremap <unique> <silent> <Leader>cm :<C-u>CtrlPMixed<CR>
 nnoremap <unique> <silent> <Leader>cr :<C-u>CtrlPMRU<CR>
 nnoremap <unique> <silent> <Leader>ct :<C-u>CtrlPTag<CR>
 nnoremap <unique> <silent> <Leader>cy :<C-u>CtrlPYankRound<CR>
