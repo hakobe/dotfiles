@@ -20,6 +20,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'godlygeek/tabular'
@@ -268,6 +269,7 @@ nnoremap <unique> <silent> <Leader>cp :<C-u>CtrlP<CR>
 nnoremap <unique> <silent> <Leader>cr :<C-u>CtrlPMRU<CR>
 nnoremap <unique> <silent> <Leader>ct :<C-u>CtrlPTag<CR>
 nnoremap <unique> <silent> <Leader>cy :<C-u>CtrlPYankRound<CR>
+nnoremap <unique> <silent> <Leader>cf :<C-u>CtrlPFunky<CR>
 
 "" }}}
 
