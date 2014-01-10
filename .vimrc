@@ -20,6 +20,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'Shougo/neocomplcache'
@@ -258,15 +259,16 @@ vnoremap <unique> <silent> <Leader>y "*y
 
 "" ctrlp {{{
 let g:ctrlp_extensions = ['mixed', 'quickfix']
-let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_switch_buffer = '0'
 let g:ctrlp_open_new_file = 'r'
 
-nnoremap <unique> <silent> <C-@> :<C-u>CtrlPMixed<CR>
+nnoremap <unique> <silent> <Leader>cp :<C-u>CtrlP<CR>
 nnoremap <unique> <silent> <Leader>cm :<C-u>CtrlPMixed<CR>
 nnoremap <unique> <silent> <Leader>cr :<C-u>CtrlPMRU<CR>
 nnoremap <unique> <silent> <Leader>ct :<C-u>CtrlPTag<CR>
+nnoremap <unique> <silent> <Leader>cy :<C-u>CtrlPYankRound<CR>
 
 "" }}}
 
