@@ -48,6 +48,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
+NeoBundle 'motemen/vim-help-random'
 
 filetype plugin indent on " Required for NeoBundle
 
