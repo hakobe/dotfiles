@@ -235,6 +235,10 @@ noremap <unique> <silent> <Leader>n :bn<CR>
 noremap <unique> <silent> <Leader>p :bp<CR>
 noremap <unique> <silent> <Leader>d :bd<CR>
 
+nnoremap <unique> <Leader>] :vertical stag <C-R>=expand('<cword>')<CR><CR>
+nnoremap <unique> <Leader>g] :vertical stselect <C-R>=expand('<cword>')<CR><CR>
+
+
 "" commentout {{{
 
 " lhs comments
@@ -375,7 +379,7 @@ noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
 "" }}}
 
 "" tagbar {{{
-noremap <unique> <Leader>] :<C-u>TagbarToggle<CR>
+noremap <unique> <Leader>]] :<C-u>TagbarToggle<CR>
 "" }}}
 
 "" undotree {{{
@@ -390,3 +394,4 @@ vnoremap <unique> <Leader>t :Tabularize /
 
 " }}}
 
+z
