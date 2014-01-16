@@ -50,6 +50,13 @@ NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
 NeoBundle 'motemen/vim-help-random'
 
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'sgur/unite-qf'
+NeoBundle 'thinca/vim-unite-history'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'sgur/unite-git_grep'
+NeoBundle 'tsukkee/unite-tag'
+
 filetype plugin indent on " Required for NeoBundle
 
 " }}}
@@ -262,6 +269,31 @@ vnoremap <unique> <silent> <Leader>y "*y
 " }}}
 
 " Plugin Setting {{{
+
+"" unite {{{
+"let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <SID>[unite] <Nop>
+nmap <Space> <SID>[unite]
+
+nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir  file file/new file_mru -hide-source-names -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file_mru file -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]f :<C-u>UniteWithBufferDir  file file/new -hide-source-names -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]F :<C-u>UniteWithCurrentDir file file/new -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]r :<C-u>UniteWithBufferDir  file_mru -no-split -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]m :<C-u>Unite file_mru -no-split -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately<CR>
+nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately<CR>
+nnoremap <silent> <SID>[unite]w :<C-u>Unite window:no-current<CR>
+nnoremap <silent> <SID>[unite]p :<C-u>Unite register history/yank -buffer-name=register -no-split<CR>
+nnoremap <silent> <SID>[unite]: :<C-u>Unite history/command -start-insert<CR>
+nnoremap <silent> <SID>[unite]. :<C-u>Unite source<CR>
+nnoremap <silent> <SID>[unite]q :<C-u>Unite qf -no-quit -no-empty -auto-resize -buffer-name=quickfix<CR>
+nnoremap <silent> <SID>[unite]g :<C-u>Unite grep -buffer-name=search<CR>
+nnoremap <silent> <SID>[unite]\c :<C-u>Unite colorscheme -auto-preview<CR>
+nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
+"" }}}
 
 "" ctrlp {{{
 let g:ctrlp_extensions = ['mixed', 'quickfix']
