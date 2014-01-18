@@ -272,6 +272,16 @@ vnoremap <unique> <silent> <Leader>y "*y
 "let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
+
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()
+  " 単語単位からパス単位で削除するように変更
+  imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
+  " ESCキーを2回押すと終了する
+  nmap <silent><buffer> <ESC><ESC> q
+  imap <silent><buffer> <ESC><ESC> <ESC>q
+endfunction
+
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
@@ -279,8 +289,7 @@ nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir  file file/new file_mru
 nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file_mru file -buffer-name=files<CR>
 nnoremap <silent> <SID>[unite]f :<C-u>UniteWithBufferDir  file file/new -hide-source-names -buffer-name=files<CR>
 nnoremap <silent> <SID>[unite]F :<C-u>UniteWithCurrentDir file file/new -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]r :<C-u>UniteWithBufferDir  file_mru -no-split -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]m :<C-u>Unite file_mru -no-split -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]r :<C-u>Unite file_mru -no-split -buffer-name=files<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately<CR>
 nnoremap <silent> <SID>[unite]w :<C-u>Unite window:no-current<CR>
@@ -306,9 +315,8 @@ let g:airline_theme='tomorrow'
 
 
 let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_min_syntax_length = 5
-let g:neocomplcache_min_keyword_length = 5
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_keyword_length = 3
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_underbar_completion = 1
 
@@ -326,6 +334,11 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 "" }}}
 
