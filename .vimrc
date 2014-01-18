@@ -19,8 +19,6 @@ NeoBundle 'Shougo/vimproc', {
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'tacahiroy/ctrlp-funky'
 NeoBundle 'LeafCage/yankround.vim'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'godlygeek/tabular'
@@ -293,21 +291,6 @@ nnoremap <silent> <SID>[unite]q :<C-u>Unite qf -no-quit -no-empty -auto-resize -
 nnoremap <silent> <SID>[unite]g :<C-u>Unite grep -buffer-name=search<CR>
 nnoremap <silent> <SID>[unite]\c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
-"" }}}
-
-"" ctrlp {{{
-let g:ctrlp_extensions = ['mixed', 'quickfix']
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
-let g:ctrlp_switch_buffer = '0'
-let g:ctrlp_open_new_file = 'r'
-
-nnoremap <unique> <silent> <Leader>cp :<C-u>CtrlP<CR>
-nnoremap <unique> <silent> <Leader>cr :<C-u>CtrlPMRU<CR>
-nnoremap <unique> <silent> <Leader>ct :<C-u>CtrlPTag<CR>
-nnoremap <unique> <silent> <Leader>cy :<C-u>CtrlPYankRound<CR>
-nnoremap <unique> <silent> <Leader>cf :<C-u>CtrlPFunky<CR>
-
 "" }}}
 
 "" vim-indent-guides {{{
