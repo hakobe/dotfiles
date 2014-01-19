@@ -54,6 +54,7 @@ NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'sgur/unite-git_grep'
 NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'Shougo/unite-outline'
 
 filetype plugin indent on " Required for NeoBundle
 
@@ -294,8 +295,11 @@ nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately<CR>
 nnoremap <silent> <SID>[unite]w :<C-u>Unite window:no-current<CR>
 nnoremap <silent> <SID>[unite]p :<C-u>Unite register history/yank -buffer-name=register -no-split<CR>
+nnoremap <silent> <SID>[unite]l :<C-u>Unite line -buffer-name=search -start-insert<CR>
+nnoremap <silent> <SID>[unite][ :<C-u>Unite outline -vertical -hide-source-names -winwidth=40 -buffer-name=outline<CR>
 nnoremap <silent> <SID>[unite]: :<C-u>Unite history/command -start-insert<CR>
 nnoremap <silent> <SID>[unite]. :<C-u>Unite source<CR>
+nnoremap <silent> <SID>[unite]t :<C-u>Unite tag<CR>
 nnoremap <silent> <SID>[unite]q :<C-u>Unite qf -no-quit -no-empty -auto-resize -buffer-name=quickfix<CR>
 nnoremap <silent> <SID>[unite]g :<C-u>Unite grep -buffer-name=search<CR>
 nnoremap <silent> <SID>[unite]\c :<C-u>Unite colorscheme -auto-preview<CR>
