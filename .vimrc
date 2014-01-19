@@ -286,10 +286,10 @@ endfunction
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
-nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir  file file/new file_mru -hide-source-names -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file_mru file -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]f :<C-u>UniteWithBufferDir  file file/new -hide-source-names -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]F :<C-u>UniteWithCurrentDir file file/new -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file_mru file file_rec:! file/new -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new file_mru -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir file file/new file_mru -buffer-name=files<CR>
+nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file file/new file_mru -buffer-name=files<CR>
 nnoremap <silent> <SID>[unite]r :<C-u>Unite file_mru -no-split -buffer-name=files<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately<CR>
@@ -426,4 +426,3 @@ vnoremap <unique> <Leader>t :Tabularize /
 
 " }}}
 
-z
