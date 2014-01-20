@@ -17,6 +17,7 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'LeafCage/yankround.vim'
@@ -305,7 +306,7 @@ nnoremap <silent> <SID>[unite]. :<C-u>Unite source<CR>
 nnoremap <silent> <SID>[unite]t :<C-u>Unite tag<CR>
 nnoremap <silent> <SID>[unite]q :<C-u>Unite qf -no-quit -no-empty -auto-resize -buffer-name=quickfix<CR>
 nnoremap <silent> <SID>[unite]g :<C-u>Unite grep -buffer-name=search<CR>
-nnoremap <silent> <SID>[unite]\c :<C-u>Unite colorscheme -auto-preview<CR>
+nnoremap <silent> <SID>[unite]c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
 "" }}}
 
