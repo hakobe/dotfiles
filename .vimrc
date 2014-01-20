@@ -18,6 +18,11 @@ NeoBundle 'Shougo/vimproc', {
 
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'reedes/vim-colors-pencil'
+NeoBundle '29decibel/codeschool-vim-theme'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'vim-scripts/pyte'
+
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'LeafCage/yankround.vim'
