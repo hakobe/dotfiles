@@ -250,17 +250,15 @@ endfunction
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
-nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file file/new file_mru -buffer-name=files -start-insert<CR>
-nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new file_mru -buffer-name=files -start-insert<CR>
-nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir file file/new file_mru -buffer-name=files -start-insert<CR>
-nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file file/new file_mru -buffer-name=files -start-insert<CR>
-nnoremap <silent> <SID>[unite]r :<C-u>Unite file_rec:lib file_rec:t file_rec:templates file_rec:script file_rec:static file_rec:config -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file_mru file file/new -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]f :<C-u>Unite buffer file_mru file file/new -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]r :<C-u>Unite file file_rec:lib file_rec:t file_rec:templates file_rec:script file_rec:static file_rec:config file_rec:src -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately -start-insert<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately -start-insert<CR>
 nnoremap <silent> <SID>[unite]w :<C-u>Unite window:no-current<CR>
 nnoremap <silent> <SID>[unite]p :<C-u>Unite register history/yank -buffer-name=register -no-split<CR>
 nnoremap <silent> <SID>[unite]l :<C-u>Unite line -buffer-name=search -start-insert<CR>
-nnoremap <silent> <SID>[unite][ :<C-u>Unite outline -vertical -hide-source-names -winwidth=40 -buffer-name=outline<CR>
+nnoremap <silent> <SID>[unite]o :<C-u>Unite outline -vertical -hide-source-names -winwidth=40 -buffer-name=outline<CR>
 nnoremap <silent> <SID>[unite]: :<C-u>Unite history/command -start-insert<CR>
 nnoremap <silent> <SID>[unite]. :<C-u>Unite source<CR>
 nnoremap <silent> <SID>[unite]t :<C-u>Unite tag<CR>
