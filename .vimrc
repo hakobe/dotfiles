@@ -273,6 +273,9 @@ vnoremap <unique> <silent> <Leader>y "*y
 "let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
+let g:unite_source_file_rec_max_cache_files = 100000
+
+call unite#custom_source('file_rec', 'ignore_pattern', (unite#sources#rec#define()[0]['ignore_pattern']) . '\|\%(^\|/\)\%(cpan\|local\|node_modules\|vendor\)\%($\|/\)\|\.\%(gif\|png\|jpg\|jpeg\)$')
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
@@ -286,13 +289,13 @@ endfunction
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
-nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file_mru file file_rec:! file/new -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new file_mru -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir file file/new file_mru -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file file/new file_mru -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]r :<C-u>Unite file_mru -no-split -buffer-name=files<CR>
-nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately<CR>
-nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately<CR>
+nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file file/new file_mru -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new file_mru -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]o :<C-u>UniteWithBufferDir file file/new file_mru -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]O :<C-u>UniteWithCurrentDir file file/new file_mru -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]r :<C-u>Unite file_rec:lib file_rec:t file_rec:templates file_rec:script file_rec:static file_rec:config -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately -start-insert<CR>
+nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately -start-insert<CR>
 nnoremap <silent> <SID>[unite]w :<C-u>Unite window:no-current<CR>
 nnoremap <silent> <SID>[unite]p :<C-u>Unite register history/yank -buffer-name=register -no-split<CR>
 nnoremap <silent> <SID>[unite]l :<C-u>Unite line -buffer-name=search -start-insert<CR>
