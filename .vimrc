@@ -182,6 +182,15 @@ set tags=tags,./tags
 set complete+=k
 " }}}
 
+" Auto Command {{{
+
+autocmd BufEnter */hatena/*.html setlocal ft=tt2html
+autocmd BufEnter *.tt            setlocal ft=tt2html
+autocmd BufEnter *.psgi          setlocal ft=perl
+autocmd BufEnter *.t             setlocal ft=perl
+
+" }}}
+
 " Commands {{{
 
 let mapleader = ","
