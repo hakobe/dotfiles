@@ -1,4 +1,4 @@
-colorscheme hybrid
+colorscheme pencil
 
 set columns=280
 set lines=80
