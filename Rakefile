@@ -12,6 +12,7 @@ DST_DOT_FILES = %w(
   .proverc
   .global_gitignore
   .gemrc
+  .agignore
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
 rule /^#{ENV['HOME']}\/\..*$/ => 

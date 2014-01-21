@@ -1,0 +1,15 @@
+*~
+*.swp
+tmp
+local
+.bundle
+.vim/bundle
+.vim/dict
+.git
+.svn
+zsh-completions
+jquery-*.js
+bootstrap*.css
+bootstrap*.js
+jquery.js
+node_modules
