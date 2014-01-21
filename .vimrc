@@ -22,6 +22,7 @@ NeoBundle '29decibel/codeschool-vim-theme'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'jonathanfilip/vim-lucius'
 NeoBundle 'vim-scripts/pyte'
+NeoBundle 'altercation/vim-colors-solarized'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
