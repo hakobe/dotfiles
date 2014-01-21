@@ -201,7 +201,7 @@ noremap <unique> <silent> <Leader>d :bd<CR>
 nnoremap <unique> <Leader>] :vertical stag <C-R>=expand('<cword>')<CR><CR>
 nnoremap <unique> <Leader>g] :vertical stselect <C-R>=expand('<cword>')<CR><CR>
 
-noremap <unique> <Leader>wp :pedit +0<CR>:wincmd P<CR>
+noremap <unique> <Leader>wu :pedit +0<CR>:wincmd P<CR>
 
 "" commentout {{{
 
