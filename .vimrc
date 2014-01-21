@@ -233,6 +233,13 @@ let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
 let g:unite_source_file_rec_max_cache_files = 100000
 
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
 call unite#custom_source('file_rec', 'ignore_pattern', (unite#sources#rec#define()[0]['ignore_pattern']) . '\|\%(^\|/\)\%(cpan\|local\|node_modules\|vendor\)\%($\|/\)\|\.\%(gif\|png\|jpg\|jpeg\)$')
 
 autocmd FileType unite call s:unite_my_settings()
@@ -257,7 +264,8 @@ nnoremap <silent> <SID>[unite]: :<C-u>Unite history/command -start-insert<CR>
 nnoremap <silent> <SID>[unite]. :<C-u>Unite source<CR>
 nnoremap <silent> <SID>[unite]t :<C-u>Unite tag<CR>
 nnoremap <silent> <SID>[unite]q :<C-u>Unite qf -no-quit -no-empty -auto-resize -buffer-name=quickfix<CR>
-nnoremap <silent> <SID>[unite]g :<C-u>Unite grep -buffer-name=search<CR>
+nnoremap <silent> <SID>[unite]G :<C-u>Unite grep:. -buffer-name=search -start-insert<CR>
+nnoremap <silent> <SID>[unite]g :<C-u>UniteWithCursorWord grep:. -buffer-name=search -start-insert<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
 "" }}}
