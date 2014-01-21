@@ -374,7 +374,7 @@ noremap <unique> <Leader>gs :<C-u>Gstatus<CR>
 noremap <unique> <Leader>gd :<C-u>Gdiff<CR>
 noremap <unique> <Leader>gb :<C-u>Gblame<CR>
 noremap <unique> <Leader>ga :<C-u>Gwrite<CR>
-noremap <unique> <Leader>gc :<C-u>Gcommit<CR>
+noremap <unique> <Leader>gc :<C-u>Gcommit -v<CR>
 noremap <unique> <silent> <Leader>gg :<C-u>Gcd .<CR>
 
 "" }}}
