@@ -201,7 +201,6 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-noremap <unique> <Leader>w :<C-u>update<CR>
 noremap <unique> <silent> <Leader>n :bn<CR>
 noremap <unique> <silent> <Leader>p :bp<CR>
 noremap <unique> <silent> <Leader>d :bd<CR>
@@ -209,6 +208,7 @@ noremap <unique> <silent> <Leader>d :bd<CR>
 nnoremap <unique> <Leader>] :vertical stag <C-R>=expand('<cword>')<CR><CR>
 nnoremap <unique> <Leader>g] :vertical stselect <C-R>=expand('<cword>')<CR><CR>
 
+noremap <unique> <Leader>wu :20split +0<CR>
 
 "" commentout {{{
 
