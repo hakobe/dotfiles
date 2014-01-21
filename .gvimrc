@@ -1,4 +1,5 @@
 colorscheme pencil
+set background=light
 
 set columns=280
 set lines=80
