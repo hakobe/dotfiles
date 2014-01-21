@@ -9,13 +9,6 @@ endif
 
 call neobundle#rc(expand('~/.vim/bundle/'))
 
-NeoBundle 'Shougo/vimproc', {
-      \ 'build' : {
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ }
-
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'reedes/vim-colors-pencil'
 NeoBundle '29decibel/codeschool-vim-theme'
