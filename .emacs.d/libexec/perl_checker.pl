@@ -44,7 +44,7 @@ push @checks, "-$taint" if defined $taint;
 my $checks = join(' ', @checks);
 my $incs = join(' ', @incs);
 my $command = (-f "cpanfile") ?
-    "carton exec @incs -- perl @checks -c $file 2>&1" :
+    "carton exec @incs -- perl @incs @checks -c $file 2>&1" :
     "perl @incs @checks -c $file 2>&1";
 
 for my $line ( `$command` ) {
