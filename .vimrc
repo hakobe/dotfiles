@@ -46,6 +46,10 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'derekwyatt/vim-sbt'
+NeoBundle 'nginx.vim'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-markdown'
+
 NeoBundle 'motemen/vim-help-random'
 
 NeoBundle 'Shougo/unite.vim'
