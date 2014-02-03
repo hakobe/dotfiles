@@ -32,7 +32,7 @@ ZSH_THEME="cloud"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-extras go ruby perl rbenv tmux vagrant brew cpanm bundler node npm osx)
+plugins=(git git-extras go ruby perl rbenv tmux vagrant brew cpanm bundler node npm osx sbt scala)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,25 +67,7 @@ if [ -e ~/.aliases ]; then
     source ~/.aliases
 fi
 
-### 便利な関数
-function w {
-    cd ~/working/$1
-}
-
-function _w {
-    local allfiles
-    local -a _projects
-
-    allfiles=`find ~/working/* -type d -maxdepth 0 -exec basename '{}' ';'`
-
-    _projects=( $(echo $allfiles) )
-    _describe -t projects "Projects" _projects
-
-    return 1;
-}
-
-compdef _w w
-
+### ローカル設定があれば読み込む
 if [ -e ~/.zshrc.local ]; then
     source ~/.zshrc.local
 fi
