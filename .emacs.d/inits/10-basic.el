@@ -44,8 +44,12 @@
 (setq-default tab-width 4
               indent-tabs-mode nil)
 
-;; 終了時にオートセーブファイルを消す
-(setq delete-auto-save-files t)
+;; オートセーブファイルの保存先
+(setq auto-save-file-name-transforms
+      `((".*" ,(expand-file-name "~/.emacs.d/.backup/") t)))
+
+;; オートセーブファイルは無効化
+(setq auto-save-default nil)
 
 ;; Backup fileの場所指定
 (setq make-backup-files t)
