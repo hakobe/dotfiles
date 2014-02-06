@@ -48,6 +48,7 @@ NeoBundle 'hakobe/vim-scala'
 NeoBundle 'nginx.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 
 NeoBundle 'motemen/vim-help-random'
 
