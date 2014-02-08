@@ -280,6 +280,7 @@ nnoremap <silent> <SID>[unite]g :<C-u>UniteWithCursorWord grep:. -buffer-name=se
 nnoremap <silent> <SID>[unite]c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
 nnoremap <silent> <SID>[unite]i :<C-u>Unite script:perl:~/.vim/tools/itunes.pl -start-insert<CR>
+nnoremap <silent> <SID>[unite]I :<C-u>Unite script:ruby:~/.vim/tools/github-notify.rb -start-insert<CR>
 "" }}}
 
 "" vim-indent-guides {{{
