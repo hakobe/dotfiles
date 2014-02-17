@@ -52,10 +52,8 @@ NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 
 NeoBundle 'motemen/vim-help-random'
 
-"NeoBundle 'Shougo/unite.vim', 'ver.6'
-"NeoBundle 'Shougo/unite-mru'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'hakobe/unite-script'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'sgur/unite-qf'
 NeoBundle 'thinca/vim-unite-history'
 NeoBundle 'ujihisa/unite-colorscheme'
@@ -278,8 +276,8 @@ nnoremap <silent> <SID>[unite]G :<C-u>Unite grep:. -buffer-name=search -start-in
 nnoremap <silent> <SID>[unite]g :<C-u>UniteWithCursorWord grep:. -buffer-name=search -start-insert<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
-nnoremap <silent> <SID>[unite]i :<C-u>Unite script:perl:~/.vim/tools/itunes.pl -start-insert<CR>
-nnoremap <silent> <SID>[unite]I :<C-u>Unite script:ruby:~/.vim/tools/github-notify.rb -start-insert<CR>
+nnoremap <silent> <expr> <SID>[unite]i ':<C-u>Unite script:perl:' . expand($HOME) . '/.vim/tools/itunes.pl -start-insert<CR>'
+nnoremap <silent> <expr> <SID>[unite]I ':<C-u>Unite script:ruby:' . expand($HOME) . '/.vim/tools/github-notify.rb -start-insert<CR>'
 "" }}}
 
 "" vim-indent-guides {{{
