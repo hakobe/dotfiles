@@ -60,6 +60,7 @@ NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'sgur/unite-git_grep'
 NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'hakobe/unite-script-examples'
 
 filetype plugin indent on " Required for NeoBundle
 
