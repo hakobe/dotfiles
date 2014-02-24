@@ -277,8 +277,8 @@ nnoremap <silent> <SID>[unite]G :<C-u>Unite grep:. -buffer-name=search -start-in
 nnoremap <silent> <SID>[unite]g :<C-u>UniteWithCursorWord grep:. -buffer-name=search -start-insert<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
-nnoremap <silent> <expr> <SID>[unite]i ':<C-u>Unite script:perl:' . expand($HOME) . '/.vim/tools/itunes.pl -start-insert<CR>'
-nnoremap <silent> <expr> <SID>[unite]I ':<C-u>Unite script:ruby:' . expand($HOME) . '/.vim/tools/github-notify.rb -start-insert<CR>'
+nnoremap <silent> <expr> <SID>[unite]i ':<C-u>Unite script:perl:examples/itunes.pl -start-insert<CR>'
+nnoremap <silent> <expr> <SID>[unite]I ':<C-u>Unite script:ruby:examples/github-notify.rb -start-insert<CR>'
 "" }}}
 
 "" vim-indent-guides {{{
