@@ -19,12 +19,10 @@ NeoBundle 'altercation/vim-colors-solarized'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'LeafCage/yankround.vim'
-NeoBundle 'kana/vim-fakeclip'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'dannyob/quickfixstatus'
+
 NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimproc', {
       \ 'build' : {
@@ -34,10 +32,15 @@ NeoBundle 'Shougo/vimproc', {
       \ }
 NeoBundle "osyo-manga/shabadou.vim"
 NeoBundle "osyo-manga/vim-watchdogs"
-NeoBundle 'jceb/vim-hier'
-NeoBundle 'dannyob/quickfixstatus'
-NeoBundle "motemen/vim-guess-abbrev"
 NeoBundle 'majutsushi/tagbar'
+
+NeoBundle "motemen/vim-guess-abbrev"
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'LeafCage/yankround.vim'
+NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'gcmt/wildfire.vim'
 
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
@@ -408,3 +411,8 @@ vnoremap <unique> <Leader>t :Tabularize /
 
 " }}}
 
+"" wildfire {{{
+
+let g:wildfire_objects = ["iw", "i'", 'i"', "i)", "i]", "i}", "ip", "it"]
+
+" }}}
