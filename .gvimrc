@@ -6,4 +6,4 @@ set lines=80
 set guifont=Ricty\ Regular\ for\ Powerline:h18
 
 " 挿入モードを抜けるとIMオフ
-set iminsert=2
+set iminsert=0
