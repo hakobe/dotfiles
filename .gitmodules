@@ -1,6 +1,6 @@
 [submodule ".vim/bundle/neobundle.vim"]
 	path = .vim/bundle/neobundle.vim
 	url = git://github.com/Shougo/neobundle.vim
-[submodule ".zsh/custom_plugins/auto-fu/auto-fu.zsh.git"]
-	path = .zsh/custom_plugins/auto-fu/auto-fu.zsh.git
+[submodule ".oh-my-zsh-plugins/auto-fu/auto-fu.zsh"]
+	path = .oh-my-zsh-plugins/auto-fu/auto-fu.zsh
 	url = git@github.com:hchbaw/auto-fu.zsh.git

@@ -1,4 +1,4 @@
-source ~/.zsh/custom_plugins/auto-fu/auto-fu.zsh.git/auto-fu.zsh
+source ~/.oh-my-zsh-plugins/auto-fu/auto-fu.zsh/auto-fu.zsh
 # initialization and options
 function zle-line-init () { auto-fu-init }
 zle -N zle-line-init

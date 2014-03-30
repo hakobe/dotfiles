@@ -5,6 +5,7 @@ DST_DOT_FILES = %w(
   .vim
   .vimrc
   .gvimrc
+  .oh-my-zsh-plugins
   .zshrc
   .zshenv
   .aliases
@@ -15,9 +16,17 @@ DST_DOT_FILES = %w(
   .agignore
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
-rule /^#{ENV['HOME']}\/\..*$/ => 
-  [ proc { |target| target.sub(/^#{ENV['HOME']}\/\./, ".") } ] do |task|
-  sh %(ln -sF "#{Rake.original_dir}/#{task.source}" "#{task.name}")
+file "#{ENV['HOME']}/.oh-my-zsh" do
+  sh %(git clone https://github.com/robbyrussell/oh-my-zsh.git #{ENV['HOME']}/.oh-my-zsh)
 end
 
-task :default => DST_DOT_FILES
+file "#{ENV['HOME']}/.oh-my-zsh/custom/plugins" => "#{ENV['HOME']}/.oh-my-zsh" do
+  sh %(ln -si #{ENV['HOME']}/.oh-my-zsh-plugins #{ENV['HOME']}/.oh-my-zsh/custom/plugins)
+end
+
+rule /^#{ENV['HOME']}\/\..*$/ =>
+  [ proc { |target| target.sub(/^#{ENV['HOME']}\/\./, ".") } ] do |task|
+  sh %(ln -si "#{Rake.original_dir}/#{task.source}" "#{task.name}")
+end
+
+task :default => DST_DOT_FILES + ["#{ENV['HOME']}/.oh-my-zsh", "#{ENV['HOME']}/.oh-my-zsh/custom/plugins"]
