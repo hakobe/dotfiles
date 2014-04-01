@@ -263,7 +263,7 @@ endfunction
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
-nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file_mru file file/new -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]; :<C-u>UniteWithProjectDir buffer file_mru file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]' :<C-u>UniteWithBufferDir buffer file_mru file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]r :<C-u>Unite file file_rec:lib file_rec:t file_rec:templates file_rec:script file_rec:static file_rec:config file_rec:src -buffer-name=files -start-insert<CR>
