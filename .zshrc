@@ -34,6 +34,8 @@ ZSH_THEME="cloud"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(auto-fu git git-extras go ruby perl rbenv tmux vagrant brew cpanm bundler node npm osx sbt scala)
 
+ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...

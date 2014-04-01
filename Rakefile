@@ -5,7 +5,7 @@ DST_DOT_FILES = %w(
   .vim
   .vimrc
   .gvimrc
-  .oh-my-zsh-plugins
+  .oh-my-zsh-custom
   .zshrc
   .zshenv
   .aliases
@@ -18,10 +18,6 @@ DST_DOT_FILES = %w(
 
 file "#{ENV['HOME']}/.oh-my-zsh" do
   sh %(git clone https://github.com/robbyrussell/oh-my-zsh.git #{ENV['HOME']}/.oh-my-zsh)
-end
-
-file "#{ENV['HOME']}/.oh-my-zsh/custom/plugins" => "#{ENV['HOME']}/.oh-my-zsh" do
-  sh %(ln -si #{ENV['HOME']}/.oh-my-zsh-plugins #{ENV['HOME']}/.oh-my-zsh/custom/plugins)
 end
 
 rule /^#{ENV['HOME']}\/\..*$/ =>

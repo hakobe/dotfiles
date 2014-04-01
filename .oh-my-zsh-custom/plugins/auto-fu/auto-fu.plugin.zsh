@@ -1,6 +1,6 @@
 # see http://d.hatena.ne.jp/tarao/20100531/1275322620
 
-source ~/.oh-my-zsh-plugins/auto-fu/auto-fu.zsh/auto-fu.zsh
+source ~/.oh-my-zsh-custom/plugins/auto-fu/auto-fu.zsh/auto-fu.zsh
 # initialization and options
 function zle-line-init () { auto-fu-init }
 zle -N zle-line-init
