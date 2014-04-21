@@ -25,4 +25,4 @@ rule /^#{ENV['HOME']}\/\..*$/ =>
   sh %(ln -si "#{Rake.original_dir}/#{task.source}" "#{task.name}")
 end
 
-task :default => DST_DOT_FILES + ["#{ENV['HOME']}/.oh-my-zsh", "#{ENV['HOME']}/.oh-my-zsh/custom/plugins"]
+task :default => DST_DOT_FILES + ["#{ENV['HOME']}/.oh-my-zsh"]
