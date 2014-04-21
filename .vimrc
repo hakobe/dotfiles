@@ -1,4 +1,5 @@
 " vim:set foldmethod=marker:
+"
 
 " NeoBundle {{{
 filetype off
@@ -41,6 +42,7 @@ NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'gcmt/wildfire.vim'
+NeoBundle "syui/airsave.vim"
 
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
@@ -416,3 +418,11 @@ vnoremap <unique> <Leader>t :Tabularize /
 let g:wildfire_objects = ["iw", "i'", 'i"', "i)", "i]", "i}", "ip", "it"]
 
 " }}}
+
+"" air-save {{{
+
+let g:auto_write = 1
+
+"" }}}
+
+
