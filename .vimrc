@@ -43,6 +43,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle "syui/airsave.vim"
+NeoBundle "gre/play2vim"
 
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
@@ -189,7 +190,7 @@ set complete+=k
 
 " Auto Command {{{
 
-autocmd BufEnter */hatena/*.html setlocal ft=tt2html
+autocmd BufEnter */hatena/Hatena-*.html setlocal ft=tt2html
 autocmd BufEnter *.tt            setlocal ft=tt2html
 autocmd BufEnter *.psgi          setlocal ft=perl
 autocmd BufEnter *.t             setlocal ft=perl
@@ -265,9 +266,10 @@ endfunction
 nnoremap <SID>[unite] <Nop>
 nmap <Space> <SID>[unite]
 
-nnoremap <silent> <SID>[unite]; :<C-u>UniteWithProjectDir buffer file_mru file file/new -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file_mru file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]' :<C-u>UniteWithBufferDir buffer file_mru file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]F :<C-u>UniteWithBufferDir file -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]r :<C-u>Unite file file_rec:lib file_rec:t file_rec:templates file_rec:script file_rec:static file_rec:config file_rec:src -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately -start-insert<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately -start-insert<CR>
