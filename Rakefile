@@ -14,6 +14,7 @@ DST_DOT_FILES = %w(
   .global_gitignore
   .gemrc
   .agignore
+  .ideavimrc
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
 file "#{ENV['HOME']}/.oh-my-zsh" do
