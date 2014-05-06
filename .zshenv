@@ -13,8 +13,6 @@ export PATH="$HOME/bin:$PATH"
 
 export MANPATH="/usr/local/share/man:$MANPATH"
 
-export SSL_CERT_FILE=`brew --prefix curl-ca-bundle`/share/ca-bundle.crt
-
 if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
