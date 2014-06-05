@@ -28,6 +28,6 @@ percol.import_keymap({
 })
 
 percol.view.CANDIDATES_LINE_BASIC    = ("on_default", "default")
-percol.view.CANDIDATES_LINE_SELECTED = ("underline", "on_yellow", "black")
+percol.view.CANDIDATES_LINE_SELECTED = ("underline", "on_white", "black")
 percol.view.CANDIDATES_LINE_MARKED   = ("bold", "on_cyan", "black")
-percol.view.CANDIDATES_LINE_QUERY    = ("yellow", "bold")
+percol.view.CANDIDATES_LINE_QUERY    = ("red", "bold")
