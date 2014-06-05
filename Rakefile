@@ -15,6 +15,7 @@ DST_DOT_FILES = %w(
   .gemrc
   .agignore
   .ideavimrc
+  .percol.d
 ).map {|f| "#{ENV['HOME']}/#{f}" }
 
 file "#{ENV['HOME']}/.oh-my-zsh" do
