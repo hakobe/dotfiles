@@ -1,3 +1,4 @@
+
 " vim:set foldmethod=marker:
 "
 
@@ -44,6 +45,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'gcmt/wildfire.vim'
 NeoBundle "syui/airsave.vim"
 NeoBundle "gre/play2vim"
+NeoBundle 'kien/rainbow_parentheses.vim'
 
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'mbbill/undotree'
@@ -55,6 +57,7 @@ NeoBundle 'nginx.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
+NeoBundle 'guns/vim-clojure-static'
 
 NeoBundle 'motemen/vim-help-random'
 
@@ -427,4 +430,13 @@ let g:auto_write = 1
 
 "" }}}
 
+"" rainbow_parentheses {{{
 
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+
+"" }}}
+
+" }}}
