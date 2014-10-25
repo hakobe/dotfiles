@@ -57,6 +57,9 @@ NeoBundle 'nginx.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
+NeoBundle 'vim-jp/vim-go-extra'
+" vim-ft-goは最新版のvimを使えない場合のみ
+" NeoBundle 'google/vim-ft-go'
 NeoBundle 'guns/vim-clojure-static'
 
 NeoBundle 'motemen/vim-help-random'
