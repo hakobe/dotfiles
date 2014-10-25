@@ -303,6 +303,11 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='tomorrow'
 "" }}}
 
+"" go {{{
+"" go get code.google.com/p/go.tools/cmd/goimports
+let g:gofmt_command = 'goimports'
+"" }}}
+
 "" neocomplete {{{
 
 let g:neocomplete#enable_at_startup = 1
