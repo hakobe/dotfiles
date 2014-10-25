@@ -258,8 +258,6 @@ if executable('ag')
   let g:unite_source_grep_recursive_opt = ''
 endif
 
-call unite#custom_source('file_rec', 'ignore_pattern', (unite#sources#rec#define()[0]['ignore_pattern']) . '\|\%(^\|/\)\%(cpan\|local\|node_modules\|vendor\)\%($\|/\)\|\.\%(gif\|png\|jpg\|jpeg\)$')
-
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()
   " 単語単位からパス単位で削除するように変更
