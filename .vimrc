@@ -62,6 +62,8 @@ NeoBundle 'vim-jp/vim-go-extra'
 " vim-ft-goは最新版のvimを使えない場合のみ
 " NeoBundle 'google/vim-ft-go'
 NeoBundle 'guns/vim-clojure-static'
+NeoBundle 'leafgarland/typescript-vim'
+NeoBundle 'clausreinke/typescript-tools'
 
 NeoBundle 'motemen/vim-help-random'
 
