@@ -61,6 +61,7 @@ NeoBundle 'nsf/gocode', {'rtp': 'vim/'}
 NeoBundle 'vim-jp/vim-go-extra'
 " vim-ft-goは最新版のvimを使えない場合のみ
 " NeoBundle 'google/vim-ft-go'
+NeoBundle 'dgryski/vim-godef'
 NeoBundle 'guns/vim-clojure-static'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'clausreinke/typescript-tools'
@@ -308,6 +309,8 @@ let g:airline_theme='tomorrow'
 "" go {{{
 "" go get code.google.com/p/go.tools/cmd/goimports
 let g:gofmt_command = 'goimports'
+let g:godef_split = 3
+let g:godef_same_file_in_same_window = 1
 "" }}}
 
 "" neocomplete {{{
