@@ -29,3 +29,6 @@
   f  = fetch
   sup = submodule update --init
   sa = stash apply
+[ghq]
+  root = ~/working
+  root = ~/local/go
