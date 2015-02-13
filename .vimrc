@@ -283,9 +283,9 @@ nmap <Space> <SID>[unite]
 
 nnoremap <silent> <SID>[unite]; :<C-u>Unite buffer file_mru file file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]' :<C-u>UniteWithBufferDir buffer file_mru file file/new -buffer-name=files -start-insert<CR>
-nnoremap <silent> <SID>[unite]f :<C-u>Unite file file/new -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]f :<C-u>Unite file file_rec/git file/new -buffer-name=files -start-insert<CR>
 nnoremap <silent> <SID>[unite]F :<C-u>UniteWithBufferDir file file/new -buffer-name=files -start-insert<CR>
-nnoremap <silent> <SID>[unite]r :<C-u>Unite file file_rec:lib file_rec:t file_rec:templates file_rec:script file_rec:static file_rec:config file_rec:src -buffer-name=files -start-insert<CR>
+nnoremap <silent> <SID>[unite]r :<C-u>Unite file file_rec -start-insert<CR>
 nnoremap <silent> <SID>[unite]b :<C-u>Unite buffer -immediately -start-insert<CR>
 nnoremap <silent> <SID>[unite]B :<C-u>Unite buffer -immediately -start-insert<CR>
 nnoremap <silent> <SID>[unite]w :<C-u>Unite window:no-current<CR>
@@ -294,10 +294,10 @@ nnoremap <silent> <SID>[unite]l :<C-u>Unite line -buffer-name=search -start-inse
 nnoremap <silent> <SID>[unite]d :<C-u>Unite outline -vertical -hide-source-names -winwidth=40 -buffer-name=outline<CR>
 nnoremap <silent> <SID>[unite]: :<C-u>Unite history/command -start-insert<CR>
 nnoremap <silent> <SID>[unite]. :<C-u>Unite source<CR>
-nnoremap <silent> <SID>[unite]t :<C-u>Unite tag<CR>
+nnoremap <silent> <SID>[unite]t :<C-u>Unite tag -start-insert<CR>
 nnoremap <silent> <SID>[unite]q :<C-u>Unite qf -no-quit -no-empty -auto-resize -buffer-name=quickfix<CR>
-nnoremap <silent> <SID>[unite]G :<C-u>Unite grep:. -buffer-name=search -start-insert<CR>
-nnoremap <silent> <SID>[unite]g :<C-u>UniteWithCursorWord grep:. -buffer-name=search -start-insert<CR>
+nnoremap <silent> <SID>[unite]G :<C-u>Unite vcs_grep/git:. -buffer-name=search -start-insert<CR>
+nnoremap <silent> <SID>[unite]g :<C-u>UniteWithCursorWord vcs_grep/git:. -buffer-name=search -start-insert<CR>
 nnoremap <silent> <SID>[unite]c :<C-u>Unite colorscheme -auto-preview<CR>
 nnoremap <silent> <SID>[unite]h :<C-u>Unite help -auto-preview<CR>
 nnoremap <silent> <expr> <SID>[unite]i ':<C-u>Unite script:perl:examples/itunes.pl -start-insert<CR>'
