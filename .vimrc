@@ -9,7 +9,10 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'reedes/vim-colors-pencil'
@@ -78,7 +81,11 @@ NeoBundle 'tsukkee/unite-tag'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'hakobe/unite-script-examples'
 
-filetype plugin indent on " Required for NeoBundle
+call neobundle#end()
+
+filetype plugin indent on
+
+NeoBundleCheck
 
 " }}}
 
