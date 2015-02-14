@@ -8,9 +8,6 @@
               evil-search-module 'evil-search
               evil-ex-search-vim-style-regexp t)
 
-;; fix evil.rcp
-(add-to-list 'el-get-sources '(:name evil :build (("make" "all")) :info nil))
-
 (add-to-list 'el-get-sources
     '(:name tarao-elisp
            :type github
