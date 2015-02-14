@@ -20,5 +20,11 @@
 (require 'init-loader)
 (setq init-loader-show-log-after-init nil)
 
+; exec-path-from-shell
+(el-get 'sync 'exec-path-from-shell)
+(require 'exec-path-from-shell)
+(exec-path-from-shell-copy-env "PATH")
+
+
 ;; If you omit arguments, then `init-loader-directory' is used
 (init-loader-load)
