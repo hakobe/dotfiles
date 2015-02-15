@@ -21,7 +21,14 @@
            :description "tarao's great evil plugins"
            :depends (tarao-elisp evil) ))
 
-(el-get 'sync '(evil evil-leader tarao-elisp tarao-evil-plugins))
+(add-to-list 'el-get-sources
+    '(:name evil-visualstar
+           :type github
+           :pkgname "bling/evil-visualstar"
+           :description "Start a * or # search from the visual selection"
+           :depends (evil) ))
+
+(el-get 'sync '(evil evil-leader tarao-elisp tarao-evil-plugins evil-visualstar))
 
 (global-evil-leader-mode)
 (require 'evil)
@@ -47,3 +54,6 @@
 ;; plugins
 
 (require 'evil-mode-line)
+
+(require 'evil-visualstar)
+(global-evil-visualstar-mode t)
