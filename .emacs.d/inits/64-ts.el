@@ -15,4 +15,4 @@
         '(lambda ()
             (require 'tss)
             (tss-config-default)
-            (set (make-local-variable 'js-indent-level) 2)))
+            (set (make-local-variable 'typescript-indent-level) 2)))
