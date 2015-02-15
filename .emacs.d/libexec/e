@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/bin/bash
 if [ -n "$*" ]; then
   emacsclient -n --alternate-editor="open_emacs" $*
 else
