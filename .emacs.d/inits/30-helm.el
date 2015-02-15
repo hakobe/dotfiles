@@ -1,4 +1,11 @@
-(el-get 'sync '(helm helm-c-yasnippet helm-ls-git))
+(add-to-list 'el-get-sources
+    '(:name helm-ghq
+           :type github
+           :pkgname "hakobe/emacs-helm-ghq"
+           :description "ghq with helm interface" ))
+
+(el-get 'sync '(helm helm-c-yasnippet helm-ls-git helm-ghq))
+(require 'helm-ghq)
 
 (defun my-helm-mini ()
   (interactive)
@@ -8,6 +15,7 @@
                        helm-source-recentf
                        helm-source-file-cache
                        helm-source-files-in-current-dir
+                       helm-source-ghq
                        )
                      "*helm mini*"))
 
