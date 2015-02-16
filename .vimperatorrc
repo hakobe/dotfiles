@@ -1,0 +1,4 @@
+set gui=none,tabs
+
+cmap <C-n> <Tab>
+cmap <C-p> <S-Tab>
