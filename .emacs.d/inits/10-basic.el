@@ -111,8 +111,8 @@
 ;;windowの設定
 (setq default-frame-alist
       (append (list
-               '(width . 160)
-               '(height . 55)
+               '(width . 240)
+               '(height . 75)
                '(top . 30)
                '(left . 80)
                '(alpha . (100 60)))
