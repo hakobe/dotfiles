@@ -1,10 +1,10 @@
-; Evil is disabled
 (setq-default evil-auto-indent t
-              evil-shift-with 4
+              evil-shift-width 2
               evil-cross-lines nil
               evil-echo-state nil
               evil-want-C-i-jump nil
               evil-want-fine-undo t
+              evil-want-C-w-in-emacs-state t
               evil-search-module 'evil-search
               evil-ex-search-vim-style-regexp t)
 

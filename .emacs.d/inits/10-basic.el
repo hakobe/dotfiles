@@ -83,8 +83,8 @@
 (delete-selection-mode t)
 
 ;; 行番号を(常に)表示する
-; (global-linum-mode)
-;(setq linum-format "%4d ")
+(global-linum-mode)
+(setq linum-format "%4d ")
 
 ;; カーソル位置の行をハイライトする
 (global-hl-line-mode)
@@ -95,6 +95,12 @@
 ;; 最後のカーソル位置を記録
 (load "saveplace")
 (setq-default save-place t)
+
+;; 対応するカーソルをハイライト
+(show-paren-mode t)
+
+;; ファイルの末尾には必ず改行をいれる
+(setq require-final-newline t)
 
 ;; status-barに時間表示
 (setq display-time-24hr-format t)
@@ -138,6 +144,9 @@
 
 ;; 行末の空白をハイライトする
 (setq-default show-trailing-whitespace t)
+
+;; 保存時に行末の空白を削除する
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; バッファの範囲を示すマークを表示する
 (setq-default indicate-buffer-boundaries 'left)
