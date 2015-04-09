@@ -156,3 +156,6 @@
 (define-key global-map [?\C-¥] [?\C-\\])
 (define-key global-map [?\M-¥] [?\M-\\])
 (define-key global-map [?\C-\M-¥] [?\C-\M-\\])
+
+;; ファイルの末尾に改行は必須
+(setq require-final-newline 't) 
