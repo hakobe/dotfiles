@@ -51,6 +51,9 @@
 ;; オートセーブファイルは無効化
 (setq auto-save-default nil)
 
+;; 開いているバッファは常に最新になる
+(global-auto-revert-mode 1)
+
 ;; Backup fileの場所指定
 (setq make-backup-files t)
 (setq backup-directory-alist
