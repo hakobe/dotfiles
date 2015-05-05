@@ -1,4 +1,6 @@
-(el-get 'sync '(go-mode go-autocomplete))
+(el-get-bundle go-mode)
+(el-get-bundle go-autocomplete)
+
 (add-hook 'go-mode-hook
           '(lambda ()
             (require 'go-autocomplete)
@@ -6,4 +8,3 @@
             (flycheck-mode 1)
             (set (make-local-variable 'c-basic-offset) 4)
             (set (make-local-variable 'indent-tabs-mode) t)))
-

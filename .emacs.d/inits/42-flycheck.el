@@ -1,1 +1,1 @@
-(el-get 'sync 'flycheck)
+(el-get-bundle flycheck)

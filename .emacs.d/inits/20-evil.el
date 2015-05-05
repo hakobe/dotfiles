@@ -8,52 +8,31 @@
               evil-search-module 'evil-search
               evil-ex-search-vim-style-regexp t)
 
-(add-to-list 'el-get-sources
-    '(:name tarao-elisp
-           :type github
-           :pkgname "tarao/elisp"
-           :description "tarao's great elisps" ))
+(el-get-bundle! evil
+  (evil-mode 1)
+  ;; keys
+  (defun evil-swap-key (map key1 key2)
+    "Swap KEY1 and KEY2 in MAP."
+    (let ((def1 (lookup-key map key1))
+          (def2 (lookup-key map key2)))
+      (define-key map key1 def2)
+      (define-key map key2 def1)))
 
-(add-to-list 'el-get-sources
-    '(:name tarao-evil-plugins
-           :type github
-           :pkgname "tarao/evil-plugins"
-           :description "tarao's great evil plugins"
-           :depends (tarao-elisp evil) ))
+  ;; move cursor visually by default
+  (evil-swap-key evil-motion-state-map "j" "gj")
+  (evil-swap-key evil-motion-state-map "k" "gk"))
 
-(add-to-list 'el-get-sources
-    '(:name evil-visualstar
-           :type github
-           :pkgname "bling/evil-visualstar"
-           :description "Start a * or # search from the visual selection"
-           :depends (evil) ))
+(el-get-bundle evil-leader
+  (evil-leader/set-leader ",")
+  (evil-leader/set-key
+    "w" 'save-buffer)
+  (global-evil-leader-mode))
 
-(el-get 'sync '(evil evil-leader tarao-elisp tarao-evil-plugins evil-visualstar))
+(el-get-bundle tarao/elisp)
 
-(global-evil-leader-mode)
-(require 'evil)
-(evil-mode 1)
+(el-get-bundle tarao/evil-plugins
+  :features (evil-mode-line evil-little-word evil-operator-comment evil-operator-moccur)
+  :depends (color-moccur))
 
-(evil-leader/set-leader ",")
-(evil-leader/set-key
-  "w" 'save-buffer
-)
-
-;; keys
-(defun evil-swap-key (map key1 key2)
-  "Swap KEY1 and KEY2 in MAP."
-  (let ((def1 (lookup-key map key1))
-        (def2 (lookup-key map key2)))
-    (define-key map key1 def2)
-    (define-key map key2 def1)))
-
-;; move cursor visually by default
-(evil-swap-key evil-motion-state-map "j" "gj")
-(evil-swap-key evil-motion-state-map "k" "gk")
-
-;; plugins
-
-(require 'evil-mode-line)
-
-(require 'evil-visualstar)
-(global-evil-visualstar-mode t)
+(el-get-bundle bling/evil-visualstar
+  (global-evil-visualstar-mode t))

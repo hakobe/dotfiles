@@ -1,6 +1,10 @@
+
 ;; color theme solalized
-(el-get 'sync 'color-theme-solarized)
-(load-theme 'solarized-light t)
+(el-get-bundle color-theme-solarized
+  (custom-set-variables
+    '(frame-background-mode (quote dark)))
+  (load-theme 'solarized t))
+
 ;;(load-theme 'wombat t)
 
 ;; font
@@ -120,7 +124,7 @@
 ;;windowの設定
 (setq default-frame-alist
       (append (list
-               '(width . 240)
+               '(width . 140)
                '(height . 75)
                '(top . 30)
                '(left . 80)

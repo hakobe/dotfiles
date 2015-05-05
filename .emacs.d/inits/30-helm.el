@@ -1,15 +1,7 @@
-(add-to-list 'el-get-sources
-    '(:name helm-ghq
-           :type github
-           :pkgname "hakobe/emacs-helm-ghq"
-           :description "ghq with helm interface" ))
-
-(el-get 'sync '(helm helm-c-yasnippet helm-ls-git helm-ghq))
-(require 'helm-ghq)
-
 (defun my-helm-mini ()
   (interactive)
   (require 'helm-files)
+  (require 'helm-ghq)
   (helm-other-buffer '(
                        helm-source-buffers-list
                        helm-source-recentf
@@ -18,9 +10,6 @@
                        helm-source-ghq
                        )
                      "*helm mini*"))
-(require 'cl)
-(require 'helm-config)
-(require 'helm-files)
 
 ;; List files in git repos
 (defun helm-c-sources-git-project-for (pwd)
@@ -56,16 +45,20 @@
       (helm-other-buffer sources
                          (format "*helm git project in %s*" default-directory)))))
 
+(el-get-bundle helm
+  (require 'helm-config)
+  (helm-mode 1)
 
-(eval-after-load 'helm
-  '(progn
-     (global-set-key (kbd "C-;") 'my-helm-mini)
-     (global-set-key (kbd "M-;") 'helm-ls-git-ls)
-     (global-set-key (kbd "C-:") 'helm-M-x)
-     (global-set-key (kbd "M-x") 'helm-M-x)
-     (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-     (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+  (global-set-key (kbd "C-;") 'my-helm-mini)
+  (global-set-key (kbd "M-;") 'helm-ls-git-ls)
+  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 
-(eval-after-load 'helm-files
-  '(progn
-     (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)))
+  (with-eval-after-load-feature 'helm
+    (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+
+(el-get-bundle helm-ghq)
+(el-get-bundle helm-c-yasnippet)
+
+;; el-get-bundle のあとの初期化ゾーンに記述するとコンパイルエラーになる
+(with-eval-after-load-feature 'helm-files
+  (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char))
