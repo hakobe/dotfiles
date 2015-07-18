@@ -1,5 +1,5 @@
 export LANG="ja_JP.UTF-8"
-export TZ="JPN-9"
+export TZ="Asia/Tokyo"
 export DISPLAY="DISPLAY=:0.0"
 
 export EDITOR="vim"
