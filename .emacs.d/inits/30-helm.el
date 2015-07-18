@@ -48,11 +48,6 @@
 (el-get-bundle helm
   (require 'helm-config)
   (helm-mode 1)
-
-  (global-set-key (kbd "C-;") 'my-helm-mini)
-  (global-set-key (kbd "M-;") 'helm-ls-git-ls)
-  (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-
   (with-eval-after-load-feature 'helm
     (define-key helm-map (kbd "C-h") 'delete-backward-char)))
 

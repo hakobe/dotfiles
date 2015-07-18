@@ -3,6 +3,9 @@
 /.emacs.d/ac-comphist.dat
 /.emacs.d/places
 /.emacs.d/eshell
+/.emacs.d/elpa
+/.emacs.d/recentf
+/.emacs.d/ensime
 /.vim/bundle/*
 !/.vim/bundle/neobundle.vim
 /.vim/.netrwhist

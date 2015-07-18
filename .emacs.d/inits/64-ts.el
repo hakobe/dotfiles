@@ -1,4 +1,4 @@
-(el-get-bundle aki2o/emacs-tss
+(el-get-bundle carltonf/emacs-tss
   :depends (auto-complete json-mode log4e yaxception))
 
 (autoload 'typescript-mode "typescript" nil t)
@@ -7,5 +7,4 @@
 (add-hook 'typescript-mode-hook
         '(lambda ()
             (require 'tss)
-            (tss-config-default)
             (set (make-local-variable 'typescript-indent-level) 2)))

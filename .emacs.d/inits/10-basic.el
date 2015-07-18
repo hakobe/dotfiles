@@ -9,28 +9,32 @@
 
 ;; font
 (set-face-attribute 'default nil
-                    :family "monaco"
-                    :height 140)
+                    :family "Ricty for Powerline"
+                    :height 160)
+
 (set-fontset-font
  (frame-parameter nil 'font)
  'japanese-jisx0208
- '("Hiragino Maru Gothic Pro" . "iso10646-1"))
+ '("Ricty for Powerline" . "iso10646-1"))
 (set-fontset-font
  (frame-parameter nil 'font)
  'japanese-jisx0212
- '("Hiragino Maru Gothic Pro" . "iso10646-1"))
+ '("Ricty for Powerline" . "iso10646-1"))
 (set-fontset-font
  (frame-parameter nil 'font)
  'mule-unicode-0100-24ff
- '("monaco" . "iso10646-1"))
-(setq face-font-rescale-alist
-     '(("^-apple-hiragino.*" . 1.2)
-       (".*osaka-bold.*" . 1.2)
-       (".*osaka-medium.*" . 1.2)
-       (".*courier-bold-.*-mac-roman" . 1.0)
-       (".*monaco cy-bold-.*-mac-cyrillic" . 0.9)
-       (".*monaco-bold-.*-mac-roman" . 0.9)
-       ("-cdac$" . 1.3)))
+ '("Ricty for Powerline" . "iso10646-1"))
+
+;(setq face-font-rescale-alist
+;     '(("^-apple-hiragino.*" . 0.8)
+;       (".*osaka-bold.*" . 1.2)
+;       (".*osaka-medium.*" . 1.2)
+;       (".*courier-bold-.*-mac-roman" . 1.0)
+;       (".*monaco cy-bold-.*-mac-cyrillic" . 0.9)
+;       (".*monaco-bold-.*-mac-roman" . 0.9)
+;       ("-cdac$" . 1.3)))
+;(add-to-list 'face-font-rescale-alist
+;             '(".*Ricty.*" . 1.2))
 
 ;; 起動時に表示されるメッセージ, *scratch*バッファのメッセージ等を表示しない
 (setq inhibit-startup-message t
@@ -67,14 +71,17 @@
 ;; yes/noではなくy/nで訊くようにする
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; カーソル位置の行番号と桁数を表示する
-(setq column-number-mode t)
+;; カーソル位置の行番号と桁数を表示しない
+;;(setq column-number-mode f)
 
 ;; 1行ずつスクロール
 (setq scroll-conservatively 35
       scroll-margin 0
       scroll-step 1)
 (setq comint-scroll-show-maximum-output t) ;; for shell-mode
+
+;; スクロールバーは表示しない
+(scroll-bar-mode 0)
 
 ;; ツールバーを非表示にする
 (tool-bar-mode 0)
@@ -90,7 +97,7 @@
 (delete-selection-mode t)
 
 ;; 行番号を(常に)表示する
-(global-linum-mode)
+;;(global-linum-mode)
 (setq linum-format "%4d ")
 
 ;; カーソル位置の行をハイライトする
@@ -163,3 +170,9 @@
 (define-key global-map [?\C-¥] [?\C-\\])
 (define-key global-map [?\M-¥] [?\M-\\])
 (define-key global-map [?\C-\M-¥] [?\C-\M-\\])
+
+;; eldoc
+(setq-default eldoc-idle-delay 0.1
+              eldoc-echo-area-use-multiline-p t
+              flycheck-display-errors-delay 0.2)
+(el-get-bundle eldoc-extension)
