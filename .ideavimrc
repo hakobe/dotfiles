@@ -1,1 +1,2 @@
-" idea 
+set smartcase
+set hlsearch
