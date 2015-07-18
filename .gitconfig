@@ -14,7 +14,7 @@
   autosetuprebase = always
 [alias]
   st = status
-  ci = commit -v 
+  ci = commit -v
   br = branch
   co = checkout
   df = diff
@@ -29,6 +29,8 @@
   f  = fetch
   sup = submodule update --init
   sa = stash apply
+[include]
+  path=~/.gitconfig.local
 [ghq]
   root = ~/working
   root = ~/local/go
