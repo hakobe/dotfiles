@@ -1,6 +1,6 @@
 export LANG="ja_JP.UTF-8"
 export TZ="Asia/Tokyo"
-export DISPLAY="DISPLAY=:0.0"
+export DISPLAY=":0.0"
 
 export EDITOR="vim"
 export PAGER="less"
