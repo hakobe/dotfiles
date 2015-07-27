@@ -1,29 +1,29 @@
 
 ;; color theme solalized
-(el-get-bundle color-theme-solarized
-  (custom-set-variables
-    '(frame-background-mode (quote dark)))
-  (load-theme 'solarized t))
+;; (el-get-bundle color-theme-solarized
+;;   (custom-set-variables
+;;     '(frame-background-mode (quote dark)))
+;;   (load-theme 'solarized t))
 
-;;(load-theme 'wombat t)
+(load-theme 'wombat t)
 
 ;; font
 (set-face-attribute 'default nil
-                    :family "Ricty for Powerline"
-                    :height 160)
+                    :family "Ricty"
+                    :height 120)
 
 (set-fontset-font
  (frame-parameter nil 'font)
  'japanese-jisx0208
- '("Ricty for Powerline" . "iso10646-1"))
+ '("Ricty" . "iso10646-1"))
 (set-fontset-font
  (frame-parameter nil 'font)
  'japanese-jisx0212
- '("Ricty for Powerline" . "iso10646-1"))
+ '("Ricty" . "iso10646-1"))
 (set-fontset-font
  (frame-parameter nil 'font)
  'mule-unicode-0100-24ff
- '("Ricty for Powerline" . "iso10646-1"))
+ '("Ricty" . "iso10646-1"))
 
 ;(setq face-font-rescale-alist
 ;     '(("^-apple-hiragino.*" . 0.8)
@@ -101,7 +101,7 @@
 (setq linum-format "%4d ")
 
 ;; カーソル位置の行をハイライトする
-(global-hl-line-mode)
+;; (global-hl-line-mode)
 
 ;; カーソルを点滅しない
 (blink-cursor-mode nil)
@@ -131,10 +131,10 @@
 ;;windowの設定
 (setq default-frame-alist
       (append (list
-               '(width . 140)
-               '(height . 75)
-               '(top . 30)
-               '(left . 80)
+               '(width . 120)
+               '(height . 35)
+               '(top . 10)
+               '(left . 10)
                '(alpha . (100 60)))
               default-frame-alist))
 
