@@ -2,3 +2,5 @@ set gui=none,tabs
 
 cmap <C-n> <Tab>
 cmap <C-p> <S-Tab>
+
+javascript if (typeof hBookmark != 'undefined') liberator.loadScript('chrome://hatenabookmark/content/vimperator/plugin/hatenabookmark.js', {__proto__: this});
