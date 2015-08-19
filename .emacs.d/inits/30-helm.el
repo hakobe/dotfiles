@@ -47,9 +47,13 @@
 
 (el-get-bundle helm
   (require 'helm-config)
-  (helm-mode 1)
   (with-eval-after-load-feature 'helm
-    (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+    (progn
+      (global-set-key (kbd "C-;") 'helm-mini)
+      (global-set-key (kbd "C-c x") 'helm-M-x)
+      (global-set-key (kbd "C-c r") 'helm-ghq)
+      (define-key helm-map (kbd "C-h") 'delete-backward-char))))
+
 
 (el-get-bundle helm-ghq)
 (el-get-bundle helm-c-yasnippet)
