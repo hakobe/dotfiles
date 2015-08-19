@@ -29,6 +29,7 @@
              (set (make-local-variable 'cperl-indent-parens-as-block) t)
              (set (make-local-variable 'cperl-tab-always-indent) t)
              (set (make-local-variable 'cperl-indent-parens-as-block) t)
+             (set (make-local-variable 'evil-shift-width) 4)
              (yas-minor-mode 1)
              (flycheck-perl-init)
              (flycheck-mode 1)
