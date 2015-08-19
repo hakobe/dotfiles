@@ -28,6 +28,9 @@
     "w" #'save-buffer)
   (global-evil-leader-mode))
 
+(el-get-bundle evil-jumper
+  (global-evil-jumper-mode))
+
 (el-get-bundle tarao/elisp)
 
 (el-get-bundle tarao/evil-plugins
