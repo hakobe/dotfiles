@@ -15,12 +15,11 @@
 (el-get-bundle tarao/with-eval-after-load-feature-el)
 
 ; exec-path-from-shell
-(el-get-bundle exec-path-from-shell
-  (exec-path-from-shell-copy-env "PATH"))
+(el-get-bundle! exec-path-from-shell)
+(exec-path-from-shell-initialize)
 
 ; init-loader
-(el-get-bundle init-loader
-  (setq init-loader-show-log-after-init nil))
-
-;; If you omit arguments, then `init-loader-directory' is used
+; If you omit arguments, then `init-loader-directory' is used
+(el-get-bundle! init-loader)
+(setq init-loader-show-log-after-init nil)
 (init-loader-load)
