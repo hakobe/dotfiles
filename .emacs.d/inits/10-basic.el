@@ -10,7 +10,7 @@
 ;; font
 (set-face-attribute 'default nil
                     :family "Ricty"
-                    :height 120)
+                    :height 140)
 
 (set-fontset-font
  (frame-parameter nil 'font)
@@ -170,6 +170,9 @@
 (define-key global-map [?\C-¥] [?\C-\\])
 (define-key global-map [?\M-¥] [?\M-\\])
 (define-key global-map [?\C-\M-¥] [?\C-\M-\\])
+
+;; システムのクリップボードを使う
+(setq x-select-enable-clipboard t)
 
 ;; eldoc
 (setq-default eldoc-idle-delay 0.1
