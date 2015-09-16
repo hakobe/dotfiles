@@ -41,18 +41,6 @@
   (global-evil-visualstar-mode t))
 
 (el-get-bundle evil
-  ;; helm
-  (with-eval-after-load-feature (helm evil-leader)
-    (evil-leader/set-key
-      ";" #'helm-mini
-      "r" #'helm-git-project
-      "f" #'helm-find-files
-      "o" #'helm-occur
-      "q" #'helm-ghq
-      "p" #'helm-show-kill-ring
-      "x" #'helm-M-x)
-    )
-
   ;; go
   (with-eval-after-load-feature (go-mode)
 
