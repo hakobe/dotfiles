@@ -53,6 +53,7 @@
       (global-set-key (kbd "C-c x") 'helm-M-x)
       (global-set-key (kbd "C-c r") 'helm-ghq)
       (global-set-key (kbd "C-c g") 'helm-git-grep)
+      (global-set-key (kbd "C-c G") 'helm-git-grep-at-point)
       (global-set-key (kbd "C-c f") 'helm-find-files)
       (global-set-key (kbd "C-c ]") 'helm-etags-select)
       (define-key helm-map (kbd "C-h") 'delete-backward-char))))
