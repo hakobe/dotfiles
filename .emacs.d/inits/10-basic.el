@@ -10,7 +10,7 @@
 ;; font
 (set-face-attribute 'default nil
                     :family "Ricty"
-                    :height 120)
+                    :height 160)
 
 (set-fontset-font
  (frame-parameter nil 'font)
@@ -170,6 +170,9 @@
 (define-key global-map [?\C-¥] [?\C-\\])
 (define-key global-map [?\M-¥] [?\M-\\])
 (define-key global-map [?\C-\M-¥] [?\C-\M-\\])
+
+;; 単語境界に_は含めない
+(modify-syntax-entry ?_ "w" (standard-syntax-table))
 
 ;; eldoc
 (setq-default eldoc-idle-delay 0.1
