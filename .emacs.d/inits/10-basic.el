@@ -174,6 +174,9 @@
 ;; 単語境界に_は含めない
 (modify-syntax-entry ?_ "w" (standard-syntax-table))
 
+;; システムのクリップボードを使う
+(setq x-select-enable-clipboard t)
+
 ;; eldoc
 (setq-default eldoc-idle-delay 0.1
               eldoc-echo-area-use-multiline-p t
