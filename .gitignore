@@ -6,6 +6,7 @@
 /.emacs.d/elpa
 /.emacs.d/recentf
 /.emacs.d/ensime
+/.emacs.d/.backup
 /.vim/bundle/*
 !/.vim/bundle/neobundle.vim
 /.vim/.netrwhist
