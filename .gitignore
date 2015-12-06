@@ -7,6 +7,7 @@
 /.emacs.d/recentf
 /.emacs.d/ensime
 /.emacs.d/.backup
+/.emacs.d/session.*
 /.vim/bundle/*
 !/.vim/bundle/neobundle.vim
 /.vim/.netrwhist
