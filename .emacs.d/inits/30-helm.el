@@ -52,7 +52,7 @@
       (global-set-key (kbd "C-;") 'helm-mini)
       (global-set-key (kbd "C-c x") 'helm-M-x)
       (global-set-key (kbd "C-c r") 'helm-ghq)
-      (global-set-key (kbd "C-c j") 'helm-git-project)
+      (global-set-key (kbd "C-c l") 'helm-ls-git-ls)
       (global-set-key (kbd "C-c p") 'helm-show-kill-ring)
       (global-set-key (kbd "C-c g") 'helm-git-grep)
       (global-set-key (kbd "C-c G") 'helm-git-grep-at-point)
@@ -64,6 +64,7 @@
 (el-get-bundle helm-ghq)
 (el-get-bundle helm-c-yasnippet)
 (el-get-bundle helm-git-grep)
+(el-get-bundle helm-ls-git)
 
 ;; el-get-bundle のあとの初期化ゾーンに記述するとコンパイルエラーになる
 (with-eval-after-load-feature 'helm-files
