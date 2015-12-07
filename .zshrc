@@ -43,8 +43,8 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^P' history-beginning-search-backward # 先頭マッチのヒストリサーチ
 bindkey '^N' history-beginning-search-forward  # 先頭マッチのヒストリサーチ
 
-#bindkey '^R' history-incremental-pattern-search-backward
-#bindkey '^S' history-incremental-pattern-search-forward
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
 
 # Ctrl+S/Ctrl+Q によるフロー制御を使わないようにする
 setopt NO_flow_control
