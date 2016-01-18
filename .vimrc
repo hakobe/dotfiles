@@ -23,7 +23,7 @@ NeoBundle 'vim-scripts/pyte'
 NeoBundle 'altercation/vim-colors-solarized'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'bling/vim-airline'
+" NeoBundle 'bling/vim-airline'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'dannyob/quickfixstatus'
 
@@ -309,8 +309,8 @@ let g:indent_guides_enable_on_vim_startup = 1
 "}}}
 
 "" airline {{{
-let g:airline_powerline_fonts = 1
-let g:airline_theme='tomorrow'
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='tomorrow'
 "" }}}
 
 "" go {{{
