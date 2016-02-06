@@ -9,6 +9,7 @@
   (setq ac-auto-show-menu 0.3)
   (setq ac-use-menu-map t)
 
+  ;; major-modeがac-modes に含まれているときだけ有効になる
   (global-auto-complete-mode t)
 
   (with-eval-after-load-feature 'auto-complete
