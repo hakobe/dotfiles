@@ -10,4 +10,7 @@
             (require 'tide)
             (tide-setup)
             (flycheck-mode t)
-            (eldoc-mode t)))
+            (eldoc-mode t)
+            (company-mode)
+            (auto-complete-mode 0) ;; companyを使うので念のためOFFにしておく
+            ))
