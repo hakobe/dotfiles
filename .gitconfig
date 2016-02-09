@@ -29,8 +29,15 @@
   f  = fetch
   sup = submodule update --init
   sa = stash apply
+  o = browse-remote --pr
 [include]
   path=~/.gitconfig.local
 [ghq]
   root = ~/working
   root = ~/local/go
+[browse-remote "github.com"]
+	top = https://{host}/{path}
+	ref = https://{host}/{path}/tree/{short_ref}
+	rev = https://{host}/{path}/commit/{commit}
+	pr = https://{host}/{path}/pull/{short_ref}
+	file = "https://{host}/{path}/{file.directory? and :tree or :blob}/{short_rev}/{file}{lines && \"#L%s\" % lines.join(\"-\")}"
