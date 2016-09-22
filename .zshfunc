@@ -1,0 +1,11 @@
+function b() {
+  local branch_name
+  branch_name=$(git for-each-ref --sort=-committerdate refs/heads/ --format='%(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' | fzf +s --ansi | awk '{ print $1 }')
+  [[ -n "$branch_name" ]] && git checkout $branch_name
+}
+
+function r() {
+  local project_name
+  project_name=$(ghq list --full-path | fzf)
+  [[ -n "$project_name" ]] && cd $project_name
+}

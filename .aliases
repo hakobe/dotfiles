@@ -1,3 +1,2 @@
 alias "v=/Applications/MacVim.app/Contents/MacOS/mvim --remote-silent"
 alias "vn=/Applications/MacVim.app/Contents/MacOS/mvim"
-alias 'r=cd $(ghq list --full-path | peco)'
