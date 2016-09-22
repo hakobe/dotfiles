@@ -1,11 +1,15 @@
 
 ;; color theme solalized
-;; (el-get-bundle color-theme-solarized
-;;   (custom-set-variables
-;;     '(frame-background-mode (quote dark)))
-;;   (load-theme 'solarized t))
+;(el-get-bundle color-theme-solarized
+;  (custom-set-variables
+;    '(frame-background-mode (quote dark)))
+;  (load-theme 'solarized t))
 
-(load-theme 'wombat t)
+;;(load-theme 'wombat t)
+(el-get-bundle synic/jbeans-emacs
+  :features jbeans-theme
+  (load-theme 'jbeans t))
+;(el-get-bundle elpa:jbeans-theme)
 
 ;; font
 (set-face-attribute 'default nil
@@ -35,6 +39,9 @@
 ;       ("-cdac$" . 1.3)))
 ;(add-to-list 'face-font-rescale-alist
 ;             '(".*Ricty.*" . 1.2))
+
+;; 文字コードまわり
+(prefer-coding-system 'utf-8)
 
 ;; 起動時に表示されるメッセージ, *scratch*バッファのメッセージ等を表示しない
 (setq inhibit-startup-message t
